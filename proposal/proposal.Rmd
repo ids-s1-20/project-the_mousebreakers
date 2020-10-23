@@ -32,7 +32,14 @@ The outcome will be the variables that we will be looking at (i.e. occupation, n
 
 ```{r}
 astronauts %>%
-  ggplot(aes(x = year_of_selection, fill))
+  ggplot(aes(x = year_of_selection, fill = sex)) + 
+  geom_bar()
+
+astronauts %>%
+  ggplot(aes(x = year_of_selection, fill = sex)) + 
+  geom_bar(position = "fill")
+
+
 ```
 
 
