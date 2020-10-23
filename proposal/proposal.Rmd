@@ -26,7 +26,6 @@ glimpse(astronauts)
 ```
 
 
-
 ## 3. Data analysis plan
 
 
