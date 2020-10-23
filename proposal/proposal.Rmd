@@ -9,16 +9,21 @@ library(tidyverse)
 library(broom)
 
 
-
 astronauts <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2020/2020-07-14/astronauts.csv')
 
 ```
 
 ## 1. Introduction
+We are going to analysis how the ratio of male to female astronauts has changed over time in various areas such as country, occupation, military status, time spent in space and mean total number of missions. The main characteristic we are going to look is the empoloyment of women over time in the space industry. 
+This data has come from TidyTuesday from the Astronaut Database with the data was collected from those who have travelled to space. There is a variety of data variables collected from occupation, number of hours in space, number of missions to year and sex. 
+The main aspect we going to focus on is gender equality in  the space industry and if this has changed over time. This industry is known for being male dominated and we are going to analyse if there have been more females employed in the industry overtime. 
 
 
 
 ## 2. Data
+```{r}
+glimpse(astronauts)
+```
 
 
 
