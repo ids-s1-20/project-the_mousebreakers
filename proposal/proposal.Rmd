@@ -28,5 +28,11 @@ glimpse(astronauts)
 
 ## 3. Data analysis plan
 
+The outcome will be the variables that we will be looking at (i.e. occupation, number of missions, military status, time spent in space etc.). The predictor will be the sex of the astronauts and will will evaluate this over time. 
+
+```{r}
+astronauts %>%
+  ggplot(aes(x = year_of_selection, fill))
+```
 
 
