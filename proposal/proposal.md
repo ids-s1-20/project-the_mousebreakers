@@ -80,3 +80,13 @@ astronauts %>%
 ```
 
 ![](proposal_files/figure-gfm/unnamed-chunk-2-2.png)<!-- -->
+
+``` r
+astronauts %>%
+  summarise(n_distinct(mission_title))
+```
+
+    ## # A tibble: 1 x 1
+    ##   `n_distinct(mission_title)`
+    ##                         <int>
+    ## 1                         362

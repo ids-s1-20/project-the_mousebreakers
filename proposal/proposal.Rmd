@@ -39,7 +39,8 @@ astronauts %>%
   ggplot(aes(x = year_of_selection, fill = sex)) + 
   geom_bar(position = "fill")
 
+astronauts %>%
+  summarise(n_distinct(mission_title))
 
-```
 
 
