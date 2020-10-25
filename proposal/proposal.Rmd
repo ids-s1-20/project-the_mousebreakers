@@ -43,4 +43,12 @@ astronauts %>%
   summarise(n_distinct(mission_title))
 
 
+# mean of total number of missions for male vs female astronauts
+astronauts %>%
+  group_by(sex) %>%
+  summarise(
+    mean_n = mean(total_number_of_missions)
+  ) 
+
+```
 

@@ -90,3 +90,20 @@ astronauts %>%
     ##   `n_distinct(mission_title)`
     ##                         <int>
     ## 1                         362
+
+``` r
+# mean of the total number of missions for male astronauts
+astronauts %>%
+  group_by(sex) %>%
+  summarise(
+    mean_n = mean(total_number_of_missions)
+  ) 
+```
+
+    ## `summarise()` ungrouping output (override with `.groups` argument)
+
+    ## # A tibble: 2 x 2
+    ##   sex    mean_n
+    ##   <chr>   <dbl>
+    ## 1 female   2.99
+    ## 2 male     2.98
