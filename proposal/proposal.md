@@ -71,7 +71,7 @@ astronauts %>%
   geom_bar()
 ```
 
-![](proposal_files/figure-gfm/unnamed-chunk-2-1.png)<!-- -->
+![](proposal_files/figure-gfm/year_and_sex-1.png)<!-- -->
 
 ``` r
 astronauts %>%
@@ -79,7 +79,8 @@ astronauts %>%
   geom_bar(position = "fill")
 ```
 
-![](proposal_files/figure-gfm/unnamed-chunk-2-2.png)<!-- -->
+![](proposal_files/figure-gfm/year_and_sex-2.png)<!-- --> The total
+number of missions covered in this data set is 362.
 
 ``` r
 astronauts %>%
@@ -92,7 +93,7 @@ astronauts %>%
     ## 1                         362
 
 ``` r
-# mean of the total number of missions for male astronauts
+# mean of total number of missions for male vs female astronauts
 astronauts %>%
   group_by(sex) %>%
   summarise(
