@@ -71,7 +71,7 @@ astronauts %>%
   geom_bar()
 ```
 
-![](proposal_files/figure-gfm/unnamed-chunk-2-1.png)<!-- -->
+![](proposal_files/figure-gfm/year_and_sex-1.png)<!-- -->
 
 ``` r
 astronauts %>%
@@ -79,7 +79,8 @@ astronauts %>%
   geom_bar(position = "fill")
 ```
 
-![](proposal_files/figure-gfm/unnamed-chunk-2-2.png)<!-- -->
+![](proposal_files/figure-gfm/year_and_sex-2.png)<!-- --> The total
+number of missions covered in this data set is 362.
 
 ``` r
 astronauts %>%
@@ -90,3 +91,20 @@ astronauts %>%
     ##   `n_distinct(mission_title)`
     ##                         <int>
     ## 1                         362
+
+``` r
+# mean of total number of missions for male vs female astronauts
+astronauts %>%
+  group_by(sex) %>%
+  summarise(
+    mean_n = mean(total_number_of_missions)
+  ) 
+```
+
+    ## `summarise()` ungrouping output (override with `.groups` argument)
+
+    ## # A tibble: 2 x 2
+    ##   sex    mean_n
+    ##   <chr>   <dbl>
+    ## 1 female   2.99
+    ## 2 male     2.98

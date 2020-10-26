@@ -21,7 +21,7 @@ The main aspect we going to focus on is gender equality in  the space industry a
 
 
 ## 2. Data
-```{r}
+```{r see_data}
 glimpse(astronauts)
 ```
 
@@ -30,7 +30,7 @@ glimpse(astronauts)
 
 The outcome will be the variables that we will be looking at (i.e. occupation, number of missions, military status, time spent in space etc.). The predictor will be the sex of the astronauts and will will evaluate this over time. 
 
-```{r}
+```{r year_and_sex}
 astronauts %>%
   ggplot(aes(x = year_of_selection, fill = sex)) + 
   geom_bar()
@@ -39,8 +39,24 @@ astronauts %>%
   ggplot(aes(x = year_of_selection, fill = sex)) + 
   geom_bar(position = "fill")
 
+```
+
+
+```{r number_of_missions}
 astronauts %>%
   summarise(n_distinct(mission_title))
+```
+
+The total number of missions covered in this data set is `r astronauts %>% summarise(n_distinct(mission_title))`.
 
 
+
+```{r}
+# mean of total number of missions for male vs female astronauts
+astronauts %>%
+  group_by(sex) %>%
+  summarise(
+    mean_n = mean(total_number_of_missions)
+  ) 
+```
 
