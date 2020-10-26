@@ -54,7 +54,7 @@ The total number of missions covered in this data set is `r astronauts %>% summa
 
 
 
-```{r}
+```{r mean_total_missions}
 # mean of total number of missions for male vs female astronauts
 astronauts %>%
   group_by(sex) %>%
