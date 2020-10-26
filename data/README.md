@@ -7,6 +7,9 @@ using the following format.
 
 ## Astronauts Database
 
+Number of rows: 1,277
+Number of columns: 24
+
 ### Data Dictionary
 
 # `astronauts.csv`
