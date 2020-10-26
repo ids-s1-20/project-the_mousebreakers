@@ -1,6 +1,6 @@
 ---
 title: "Project proposal"
-author: "Team name"
+author: "The Mousebreakers"
 output: github_document
 ---
 
@@ -14,11 +14,11 @@ astronauts <- read_csv("/cloud/project/data/astronauts.csv")
 ```
 
 ## 1. Introduction
-As a team we have decided to use the dataset `astronauts` as we believe we can construct a meaningful analysis of this and draw valuable conclusions. This data frame contains information the astronauts that have been on the various space expeditions overtime. It contains information on the sex, what year they were selected, what year was their mission, how long the spent in space, if they were a military or civilian, if they completed additional mission and many more variables. 
+As a team, we have decided to use the dataset `astronauts` as we believe we can construct a meaningful analysis of this data and draw valuable conclusions. This dataframe contains information about the astronauts that have been on various space expeditions overtime. It contains data on their sex, what year they were selected, what year their mission launched, how long they spent in space, if they were in the military or a civilian, if they completed additional missions, and many other variables. 
 
-We are going to analyse how the ratio of male to female astronauts has changed over time in various areas such as the country, occupation, military status, time spent in space and mean total number of missions. The STEM industry is known for being heavily male dominated, although that is starting to change, how much change is happening? The main characteristic we are going to look is the employment of women over time in the space industry. 
+We are going to specifically analyse the gender equality of the astronaut profession; how has the ratio of male to female astronauts changed over time? We'll be taking into account factors such as nationality, occupation, military status, time spent in space and mean total number of missions. The STEM industry is known for being heavily male dominated; although that is starting to change, to what extent? Are there certain factors or areas in which progress is being inhibited, and can these barriers be overcome? The characteristic we are going to focus our study around is the employment of women over time in the space industry.
 
-This data has come from TidyTuesday from the Astronaut Database with the data was collected from those who have traveled to space. There is a variety of data variables collected from occupation, number of hours in space, number of missions to year and sex. 
+Our data is from TidyTuesday's Astronaut Database with the data was collected from those who have traveled to space. There is a variety of data variables collected from occupation, number of hours in space, number of missions to year and sex. 
 The main aspect we going to focus on is gender equality in  the space industry and if this has changed over time. This industry is known for being male dominated and we are going to analyse if there have been more females employed in the industry overtime.
 
 ## 2. Data
@@ -29,7 +29,7 @@ glimpse(astronauts)
 
 ## 3. Data analysis plan
 
-The outcome will be the variables that we will be looking at (i.e. occupation, number of missions, military status, time spent in space etc.). The predictor will be the sex of the astronauts and will will evaluate this over time. 
+The outcome will be the variables that we will be looking at (i.e. occupation, number of missions, military status, time spent in space etc.). The predictor will be the sex of the astronauts and we will evaluate this over time. 
 
 ```{r year_and_sex}
 astronauts %>%
