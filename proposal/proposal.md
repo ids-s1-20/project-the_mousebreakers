@@ -14,22 +14,22 @@ astronauts <- read_csv("/cloud/project/data/astronauts.csv")
 
 As a team we have decided to use the dataset `astronauts` as we believe
 we can construct a meaningful analysis of this and draw valuable
-conclusions.This data frame contains information the astronauts that
+conclusions. This data frame contains information the astronauts that
 have been on the various space expeditions overtime. It contains
 information on the sex, what year they were selected, what year was
 their mission, how long the spent in space, if they were a military or
 civilian, if they completed additional mission and many more variables.
 
-We are going to analysis how the ratio of male to female astronauts has
+We are going to analyse how the ratio of male to female astronauts has
 changed over time in various areas such as the country, occupation,
 military status, time spent in space and mean total number of missions.
-The STEM industry is known for being heavily ale dominated, although
+The STEM industry is known for being heavily male dominated, although
 that is starting to change, how much change is happening? The main
 characteristic we are going to look is the employment of women over time
 in the space industry.
 
 This data has come from TidyTuesday from the Astronaut Database with the
-data was collected from those who have travelled to space. There is a
+data was collected from those who have traveled to space. There is a
 variety of data variables collected from occupation, number of hours in
 space, number of missions to year and sex. The main aspect we going to
 focus on is gender equality in the space industry and if this has
