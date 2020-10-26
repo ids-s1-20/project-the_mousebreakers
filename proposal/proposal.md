@@ -7,7 +7,7 @@ library(tidyverse)
 library(broom)
 
 
-astronauts <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2020/2020-07-14/astronauts.csv')
+astronauts <- read_csv("/cloud/project/data/astronauts.csv")
 ```
 
 ## 1\. Introduction
