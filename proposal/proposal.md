@@ -83,7 +83,8 @@ astronauts %>%
        x = "Year of selection",
        y = "Number of astronauts",
        caption = "Data from TidyTuesday's Astronaut Database")+
-  theme(legend.title = element_blank())
+  theme(legend.title = element_blank()) +
+   theme(plot.margin = unit(c(1, 1, 1, 1),"cm"))
 ```
 
 ![](proposal_files/figure-gfm/year_and_sex-1.png)<!-- -->
@@ -97,7 +98,8 @@ astronauts %>%
        y = "Percentage of male/female astronauts",
        caption = "Data from TidyTuesday's Astronaut Database")+
   theme(legend.title = element_blank())+
-  scale_y_continuous(labels = scales::percent)
+  scale_y_continuous(labels = scales::percent) +
+   theme(plot.margin = unit(c(1, 1, 1, 1),"cm"))
 ```
 
 ![](proposal_files/figure-gfm/year_and_sex-2.png)<!-- -->
