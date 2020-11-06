@@ -73,7 +73,13 @@ glimpse(astronauts)
 The outcome will be the variables that we will be looking at
 (i.e. occupation, number of missions, military status, time spent in
 space etc.). The predictor will be the sex of the astronauts and we will
-evaluate this over time.
+evaluate this over time. The conclusion that we want to come to is that,
+while the astronautical industry was sexist and biased towards men in
+the past, in recent times this has changed; women are now given equal
+opportunities and regarded with the same respect as male astronauts.
+This will present itself in the data through more equal gender ratios,
+longer mission times for women and more junior women in the military
+being sent to space.
 
 ``` r
 astronauts %>%
