@@ -1,14 +1,9 @@
-# data
-
-Place data file(s) in this folder.
-
-Then, include codebooks (variables, and their descriptions) for your data file(s)
-using the following format.
-
 ## Astronauts Database
 
 Number of rows: 1,277
 Number of columns: 24
+
+Each row represents an astronaut, and their respective nationality, mission number, etc.
 
 ### Data Dictionary
 
