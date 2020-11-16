@@ -12,6 +12,8 @@ output:
       highlightStyle: github
       highlightLines: true
       countIncrementalSlides: false
+editor_options: 
+  chunk_output_type: console
 ---
 
 ```{r load-packages, include = FALSE}
@@ -19,6 +21,7 @@ output:
 library(tidyverse)
 library(broom)
 library(knitr)
+library(forcats)
 ```
 
 ```{r setup, include=FALSE}
@@ -27,8 +30,32 @@ knitr::opts_chunk$set(fig.retina = 3, dpi = 300)
 ```
 
 ```{r load-data, include=FALSE}
-astronauts <- read_csv("/cloud/project/data/astronauts.csv")
+astronauts_raw <- read_csv("/cloud/project/data/astronauts.csv")
 ```
+
+
+```{r cleaning-data, echo = FALSE}
+astronauts <- astronauts_raw %>% 
+  mutate(
+    sex = if_else(sex == "M", "male", "female"),
+    military_civilian = if_else(military_civilian == "Mil", "military", "civilian"),
+    occupation = case_when(
+      occupation == "Commander" ~ "commander",
+      occupation == "Flight engineer" ~ "flight engineer",
+      occupation == "Pilot" ~ "pilot",
+      occupation == "MSP" ~ "mission specialist",
+      occupation == "PSP" ~ "payload specialist",
+      occupation == "Other (space tourist)" ~ "space tourist",
+      occupation == "Other (Space tourist)" ~ "space tourist",
+      occupation == "Other (Journalist)" ~ "space tourist",
+      occupation =="Space tourist" ~ "space tourist",
+      occupation =="spaceflight participant" ~ "space tourist",
+      TRUE ~ occupation)
+  )
+  
+```
+
+
 
 
 class: center, middle
