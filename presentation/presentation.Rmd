@@ -1,7 +1,7 @@
 ---
-title: "Presentation title"
-subtitle: "Presentation subtitle (if any)"
-author: "Team name <br> Names of team members"
+title: "Astronauts"
+subtitle: "An investigation into the role of gender in the out of space workplace."
+author: "Mousebreakers <br> Bence Kaszás, Tom Gourlay, Sophie Jones, Julia Schonthaler & JohnAdibpour"
 institute: "University of Edinburgh"
 date: "`r Sys.Date()`"
 output:
@@ -27,13 +27,14 @@ knitr::opts_chunk$set(fig.retina = 3, dpi = 300)
 ```
 
 ```{r load-data, include=FALSE}
-# Load your data here
+astronauts <- read_csv("/cloud/project/data/astronauts.csv")
 ```
 
 
 class: center, middle
 
-## A statement of the overall goal / research question
+
+## A statement of the overall goal / research
 
 ---
 
@@ -174,3 +175,10 @@ of your presentation.
 
 - But some of you might want to play around with slide styling. The 
 `xaringanthemer` provides some solutions for this that: https://pkg.garrickadenbuie.com/xaringanthemer/. 
+
+---
+```{r}
+
+
+```
+

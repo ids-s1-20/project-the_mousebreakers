@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html lang="" xml:lang="">
   <head>
-    <title>Presentation title</title>
+    <title>Astronauts</title>
     <meta charset="utf-8" />
-    <meta name="author" content="Team name   Names of team members" />
-    <meta name="date" content="2020-10-20" />
-    <script src="libs/header-attrs-2.4.4/header-attrs.js"></script>
+    <meta name="author" content="Mousebreakers   Bence Kaszás, Tom Gourlay, Sophie Jones, Julia Schonthaler &amp; JohnAdibpour" />
+    <meta name="date" content="2020-11-16" />
     <link href="libs/remark-css-0.0.1/default.css" rel="stylesheet" />
     <link href="libs/remark-css-0.0.1/default-fonts.css" rel="stylesheet" />
   </head>
@@ -13,11 +12,11 @@
     <textarea id="source">
 class: center, middle, inverse, title-slide
 
-# Presentation title
-## Presentation subtitle (if any)
-### Team name <br> Names of team members
+# Astronauts
+## An investigation into the role of gender in the out of space workplace.
+### Mousebreakers <br> Bence Kaszás, Tom Gourlay, Sophie Jones, Julia Schonthaler &amp; JohnAdibpour
 ### University of Edinburgh
-### 2020-10-20
+### 2020-11-16
 
 ---
 
@@ -31,7 +30,8 @@ class: center, middle, inverse, title-slide
 
 class: center, middle
 
-## A statement of the overall goal / research question
+
+## A statement of the overall goal / research
 
 ---
 
@@ -110,9 +110,10 @@ glance(model)
 
 ```
 ## # A tibble: 1 x 12
-##   r.squared adj.r.squared sigma statistic  p.value    df logLik   AIC   BIC deviance df.residual  nobs
-##       &lt;dbl&gt;         &lt;dbl&gt; &lt;dbl&gt;     &lt;dbl&gt;    &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;    &lt;dbl&gt;       &lt;int&gt; &lt;int&gt;
-## 1     0.651         0.644  15.4      89.6 1.49e-12     1  -207.  419.  425.   11354.          48    50
+##   r.squared adj.r.squared sigma statistic  p.value    df logLik   AIC   BIC
+##       &lt;dbl&gt;         &lt;dbl&gt; &lt;dbl&gt;     &lt;dbl&gt;    &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
+## 1     0.651         0.644  15.4      89.6 1.49e-12     1  -207.  419.  425.
+## # … with 3 more variables: deviance &lt;dbl&gt;, df.residual &lt;int&gt;, nobs &lt;int&gt;
 ```
 
 ---
@@ -232,6 +233,16 @@ of your presentation.
 
 - But some of you might want to play around with slide styling. The 
 `xaringanthemer` provides some solutions for this that: https://pkg.garrickadenbuie.com/xaringanthemer/. 
+
+---
+
+```r
+astronauts %&gt;%
+  ggplot(aes(x = year_of_selection, fill = sex)) +
+  geom_bar()
+```
+
+&lt;img src="presentation_files/figure-html/unnamed-chunk-1-1.png" width="2100" /&gt;
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
