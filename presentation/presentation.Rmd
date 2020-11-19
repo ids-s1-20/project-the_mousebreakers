@@ -38,8 +38,6 @@ astronauts_raw <- read_csv("/cloud/project/data/astronauts.csv")
 ```{r cleaning-data, echo = FALSE}
 astronauts <- astronauts_raw %>% 
   mutate(
-    sex = if_else(sex == "M", "male", "female"),
-    military_civilian = if_else(military_civilian == "Mil", "military", "civilian"),
     occupation = case_when(
       occupation == "Commander" ~ "commander",
       occupation == "Flight engineer" ~ "flight engineer",
@@ -52,8 +50,11 @@ astronauts <- astronauts_raw %>%
       occupation =="Space tourist" ~ "space tourist",
       occupation =="spaceflight participant" ~ "space tourist",
       TRUE ~ occupation)
-  )
-  
+  ) 
+
+astronauts$occupation <- astronauts$occupation %>% 
+  factor(levels = c("commander","pilot", "mission specialist", "flight engineer", "payload specialist", "space tourist"))
+
 ```
 
 
