@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html lang="" xml:lang="">
   <head>
-    <title>Presentation title</title>
+    <title>Astronauts</title>
     <meta charset="utf-8" />
-    <meta name="author" content="Team name   Names of team members" />
-    <meta name="date" content="2020-10-20" />
-    <script src="libs/header-attrs-2.4.4/header-attrs.js"></script>
+    <meta name="author" content="The Mousebreakers   Bence Kaszás, Tom Gourlay, Sophie Jones, Julia Schonthaler &amp; John Adibpour" />
+    <meta name="date" content="2020-11-20" />
     <link href="libs/remark-css-0.0.1/default.css" rel="stylesheet" />
     <link href="libs/remark-css-0.0.1/default-fonts.css" rel="stylesheet" />
   </head>
@@ -13,11 +12,11 @@
     <textarea id="source">
 class: center, middle, inverse, title-slide
 
-# Presentation title
-## Presentation subtitle (if any)
-### Team name <br> Names of team members
+# Astronauts
+## An investigation into the role that gender plays within the astronautical profession
+### The Mousebreakers <br> Bence Kaszás, Tom Gourlay, Sophie Jones, Julia Schonthaler &amp; John Adibpour
 ### University of Edinburgh
-### 2020-10-20
+### 2020-11-20
 
 ---
 
@@ -29,18 +28,74 @@ class: center, middle, inverse, title-slide
 
 
 
-class: center, middle
 
-## A statement of the overall goal / research question
+
+class: inverse, center, middle
+
+# Introduction to the Dataset
+
+---
+
+# Introduction to the Dataset
+The space industry is known for being male dominated, starting from before the first *man* on the moon, and continuing with current-day pioneers like Elon Musk. While this may be due to space-related occupations being primarily populated by STEM graduates, a notoriously gender-imbalanced field, we couldn't help but note the surprising lack of female representation in space when skimming through the "astronauts" dataset that we found in the TidyTuesday database, despite the recent push for women in STEM fields. Is there a deeper-rooted, systemic problem with gender in space? We intend to find out!
+-  Any other things to say regarding statements of the overall goal / research
+- The next slide is a visualisation of sex over time, showing greater proportion of males in earlier years
+However, in recent years the proportion of males to females has begun to equalise. 
+
+
+---
+
+# Introduction to the Dataset
+&lt;img src="presentation_files/figure-html/unnamed-chunk-1-1.png" width="80%" /&gt;
 
 ---
 
 class: inverse, center, middle
 
-# Section title
+# Comparing Gender with different variables
 
 ---
 
+# Gender selection by Country and Programme
+As we began to explore the data, we wondered if certain progressive countries led the introduction of women into the profession, or if all countries started to do so at the same time.
+- We found that:
+- As shown by the data, the first female astronauts were introduced in the ____ missions, ....
+- variable "selection" is programme
+- *graph*
+- Look into the programme in which the astronauts are enrolled in? What is the ratio of males to females in each programme? What country are these programmes held in? Is there a country in particular which is more/less progressive in gender equality?
+Adjusted R Squared Value? Is adding sex beneficial?
+
+
+---
+
+# Gender and Military Status/Occupation
+- A common indicator of workplace gender inequality is women having to outperform their male counterparts to receive the same level of treatment, pay or respect.
+- Aware of this, we sought to investigate how military status affected selection for missions, and if female astronauts needed to occupy a higher military rank to be considered than males.
+- 
+- Analyse the role of sex in relationship to military status. Are females of Military Status more likely to become astronauts? Or are more civilian females enlisted?
+Adjusted R Squared Value? Is adding sex beneficial?
+- Investigation the effect of gender and occupation. What ranking do female astronauts hold? How has this changed? Are higher ranking females more likely to be enlisted as astronauts?
+
+---
+
+# Mission Stats
+- Compare time spent in space, total hours/mission hours, number of missions, EVA (spacewalks) or other misc data between men and women, and maybe across rank too - do higher ranks usually do EVAs? Are men higher rank on average? Do these two correlate? etc
+
+---
+
+class: inverse, center, middle
+
+# Conclusion
+
+---
+
+# Conclusion
+In conclusion, we've found that ....
+- Reasons/explainations for the trends we've been seeing - traditional gender roles - women in the house, men at work? Space being seen as dangerous? Men being seen as adventurers/pioneers, and not women?
+- General trend: more women in space? Any predictions/projections for the future?
+
+
+---
 # Hello World
 
 - Click the `Knit` button to compile your presentation
@@ -110,9 +165,10 @@ glance(model)
 
 ```
 ## # A tibble: 1 x 12
-##   r.squared adj.r.squared sigma statistic  p.value    df logLik   AIC   BIC deviance df.residual  nobs
-##       &lt;dbl&gt;         &lt;dbl&gt; &lt;dbl&gt;     &lt;dbl&gt;    &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;    &lt;dbl&gt;       &lt;int&gt; &lt;int&gt;
-## 1     0.651         0.644  15.4      89.6 1.49e-12     1  -207.  419.  425.   11354.          48    50
+##   r.squared adj.r.squared sigma statistic  p.value    df logLik   AIC   BIC
+##       &lt;dbl&gt;         &lt;dbl&gt; &lt;dbl&gt;     &lt;dbl&gt;    &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
+## 1     0.651         0.644  15.4      89.6 1.49e-12     1  -207.  419.  425.
+## # … with 3 more variables: deviance &lt;dbl&gt;, df.residual &lt;int&gt;, nobs &lt;int&gt;
 ```
 
 ---
@@ -121,7 +177,19 @@ glance(model)
 
 
 
-&lt;img src="presentation_files/figure-html/plot-iris-1.png" width="1500" /&gt;
+&lt;img src="presentation_files/figure-html/plot-iris-1.png" width="80%" /&gt;
+
+---
+
+## Plot and text
+
+.pull-left[
+- Some text
+- goes here
+]
+.pull-right[
+&lt;img src="presentation_files/figure-html/unnamed-chunk-2-1.png" width="100%" /&gt;
+]
 
 ---
 
@@ -232,6 +300,8 @@ of your presentation.
 
 - But some of you might want to play around with slide styling. The 
 `xaringanthemer` provides some solutions for this that: https://pkg.garrickadenbuie.com/xaringanthemer/. 
+
+---
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
