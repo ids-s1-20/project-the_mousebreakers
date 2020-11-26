@@ -163,22 +163,27 @@ class: inverse, center, middle
 
 ---
 
-# Gender vs Variables 
-
-Include logistic regression, how previously mentioned variables contribute to gender, draw conclusions.
+# ROC curve 
 
 
 
 
 
 
-.pull-left[
-ROC curve for covered variables
-]
-.pull-right[
---
 &lt;img src="presentation_files/figure-html/unnamed-chunk-7-1.png" width="80%" /&gt;
-]
+
+---
+#Area under the ROC curve
+
+
+```
+## # A tibble: 1 x 3
+##   .metric .estimator .estimate
+##   &lt;chr&gt;   &lt;chr&gt;          &lt;dbl&gt;
+## 1 roc_auc binary         0.740
+```
+--
+- 
 
 ---
 # Conclusion
@@ -275,7 +280,7 @@ glance(model)
 - goes here
 ]
 .pull-right[
-&lt;img src="presentation_files/figure-html/unnamed-chunk-8-1.png" width="100%" /&gt;
+&lt;img src="presentation_files/figure-html/unnamed-chunk-9-1.png" width="100%" /&gt;
 ]
 
 ---
