@@ -148,10 +148,39 @@ class: inverse, center, middle
 
 ---
 
+# Gender vs Variables 
+
+Include logistic regression, how previously mentioned variables contribute to gender, draw conclusions.
+
+
+
+
+
+```r
+tidy(gender_fit)
+```
+
+```
+## # A tibble: 7 x 5
+##   term                         estimate std.error statistic  p.value
+##   &lt;chr&gt;                           &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;    &lt;dbl&gt;
+## 1 (Intercept)                    4.58      0.622      7.36  1.80e-13
+## 2 total_number_of_missions       0.0185    0.0680     0.272 7.85e- 1
+## 3 occupationpilot               -1.33      0.697     -1.91  5.58e- 2
+## 4 occupationmission specialist  -3.33      0.590     -5.65  1.62e- 8
+## 5 occupationflight engineer     -2.45      0.629     -3.90  9.54e- 5
+## 6 occupationpayload specialist  -2.23      0.754     -2.96  3.09e- 3
+## 7 occupationspace tourist       -2.99      0.979     -3.06  2.21e- 3
+```
+
+---
 # Conclusion
-In conclusion, we've found that ....
-- Reasons/explainations for the trends we've been seeing - traditional gender roles - women in the house, men at work? Space being seen as dangerous? Men being seen as adventurers/pioneers, and not women?
+
+- we've found that there is an upward trend in the number of women deployed in space missions. 
+- Reasons/explanations for the trends we've been seeing - traditional gender roles - women in the house, men at work? Space being seen as dangerous? Men being seen as adventurers/pioneers, and not women?
 - General trend: more women in space? Any predictions/projections for the future?
+
+Are these varying factors affected by gender? Is there a progression towards gender equality in the space industry?
 
 ---
 
@@ -239,7 +268,7 @@ glance(model)
 - goes here
 ]
 .pull-right[
-&lt;img src="presentation_files/figure-html/unnamed-chunk-4-1.png" width="100%" /&gt;
+&lt;img src="presentation_files/figure-html/unnamed-chunk-6-1.png" width="100%" /&gt;
 ]
 
 ---
