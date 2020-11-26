@@ -133,6 +133,11 @@ class: inverse, center, middle
 # Comparing Gender with different variables
 
 ---
+class: inverse, center, middle
+
+# Country and Programme
+
+---
 
 # Gender selection by Country and Programme
 As we began to explore the data, we wondered if certain progressive countries led the introduction of women into the profession, or if all countries started to do so at the same time.
@@ -142,6 +147,18 @@ As we began to explore the data, we wondered if certain progressive countries le
 - *graph*
 - Look into the programme in which the astronauts are enrolled in? What is the ratio of males to females in each programme? What country are these programmes held in? Is there a country in particular which is more/less progressive in gender equality?
 Adjusted R Squared Value? Is adding sex beneficial?
+
+
+---
+
+```{r, echo = FALSE}
+astronauts %>%
+  
+  group_by(year_of_selection) %>%
+  ggplot(aes(x = year_of_mission, fill = selection)) +
+  geom_bar()
+
+```
 
 
 ---

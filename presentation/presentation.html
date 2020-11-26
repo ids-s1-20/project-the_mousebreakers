@@ -3,7 +3,7 @@
   <head>
     <title>Astronauts</title>
     <meta charset="utf-8" />
-    <meta name="author" content="The Mousebreakers   Bence Kaszás, Tom Gourlay, Sophie Jones, Julia Schönthaler &amp; John Adibpour" />
+    <meta name="author" content="The Mousebreakers   Bence Kaszás, Tom Gourlay, Sophie Jones, Julia Schonthaler &amp; John Adibpour" />
     <meta name="date" content="2020-11-26" />
     <link href="libs/remark-css-0.0.1/default.css" rel="stylesheet" />
     <link href="libs/remark-css-0.0.1/default-fonts.css" rel="stylesheet" />
@@ -13,8 +13,8 @@
 class: center, middle, inverse, title-slide
 
 # Astronauts
-## An investigation into the role that gender plays within the outer-space workplace!
-### The Mousebreakers <br> Bence Kaszás, Tom Gourlay, Sophie Jones, Julia Schönthaler &amp; John Adibpour
+## An investigation into the role that gender plays within the astronautical profession
+### The Mousebreakers <br> Bence Kaszás, Tom Gourlay, Sophie Jones, Julia Schonthaler &amp; John Adibpour
 ### University of Edinburgh
 ### 2020-11-26
 
@@ -39,6 +39,7 @@ class: inverse, center, middle
 # Introduction to the Dataset
 The space industry is known for being male dominated, starting from before the first *man* on the moon, and continuing with current-day pioneers like Elon Musk. While this may be due to space-related occupations being primarily populated by STEM graduates, a notoriously gender-imbalanced field, we couldn't help but note the surprising lack of female representation in space when skimming through the "astronauts" dataset that we found in the TidyTuesday database, despite the recent push for women in STEM fields. Is there a deeper-rooted, systemic problem with gender in space? We intend to find out!
 -  Any other things to say regarding statements of the overall goal / research
+- The next slide is a visualisation of sex over time, showing greater proportion of males in earlier years
 However, in recent years the proportion of males to females has begun to equalise. 
 
 
@@ -46,44 +47,17 @@ However, in recent years the proportion of males to females has begun to equalis
 
 # Introduction to the Dataset
 &lt;img src="presentation_files/figure-html/unnamed-chunk-1-1.png" width="80%" /&gt;
----
-
-# Women in space
-
-.pull-left[
-- The first woman in space was Valentina Tereshkova in 1963, the next being 19 years later! Both were from the Soviet Union.
-- While a number of American women successfully underwent the astronaut selection process in the early 1960s, they were not eligible to be astronauts; all astronauts were required to be military test pilots, a career not available to women at the time.
-- NASA opened the space program to female applicants in 1978, in response to new anti-discrimination laws. When Sally Ride became the first female U.S. astronaut to go into space, the media asked her questions about her reproductive organs and whether she would cry if things went wrong on the job. 
-]
-
-&lt;div class="figure" style="text-align: center"&gt;
-&lt;img src="https://anotherimg-dazedgroup.netdna-ssl.com/482/azure/another-prod/340/7/347259.jpg" alt="Valentina Tereshkova, Copyright RSC Energia" width="25%" /&gt;
-&lt;p class="caption"&gt;Valentina Tereshkova, Copyright RSC Energia&lt;/p&gt;
-&lt;/div&gt;
----
-
-# Women in space
-
-
-.pull-left[
-- Material concerns may explain trends in EVA (spacewalk) time, for example; the low number of produced smaller sized space suits has been hindering women astronauts to do EVAs because of a lack of fitting suits.
-- Due to the currently used risk models for endometrial, ovarian and breast cancer, women at NASA can currently only spend half as much time on missions as men, thereby limiting their career options compared to men, as both male and female astronauts are not allowed to accumulate a radiation dose that would increase their lifetime risk of developing fatal cancer by more than 3 percent. 
-- NASA reports initially argued that menstruation could pose serious health risks or have a negative effect on performance, although it is now dealt with as a matter of routine.
-]
-
-&lt;div class="figure" style="text-align: center"&gt;
-&lt;img src="https://techcrunch.com/wp-content/uploads/2016/01/nasa-spacewalk.jpg?w=1390&amp;crop=1" alt="Spacewalk, Copyright NASA" width="40%" /&gt;
-&lt;p class="caption"&gt;Spacewalk, Copyright NASA&lt;/p&gt;
-&lt;/div&gt;
----
-
-&lt;img src="presentation_files/figure-html/EVA grap-1.png" width="100%" /&gt;
 
 ---
 
 class: inverse, center, middle
 
 # Comparing Gender with different variables
+
+---
+class: inverse, center, middle
+
+# Country and Programme
 
 ---
 
@@ -95,6 +69,16 @@ As we began to explore the data, we wondered if certain progressive countries le
 - *graph*
 - Look into the programme in which the astronauts are enrolled in? What is the ratio of males to females in each programme? What country are these programmes held in? Is there a country in particular which is more/less progressive in gender equality?
 Adjusted R Squared Value? Is adding sex beneficial?
+
+
+---
+
+
+```
+## Warning: position_stack requires non-overlapping x intervals
+```
+
+&lt;img src="presentation_files/figure-html/unnamed-chunk-2-1.png" width="80%" /&gt;
 
 
 ---
@@ -116,7 +100,7 @@ class: inverse, center, middle
 #Mission Hours
 
 .pull-left[
-&lt;img src="presentation_files/figure-html/unnamed-chunk-2-1.png" width="80%" /&gt;
+&lt;img src="presentation_files/figure-html/unnamed-chunk-3-1.png" width="80%" /&gt;
 ]
 
 .pull-right[
@@ -127,7 +111,7 @@ class: inverse, center, middle
 ---
 #Recall for more missions
 .pull-left[
-&lt;img src="presentation_files/figure-html/unnamed-chunk-3-1.png" width="80%" /&gt;
+&lt;img src="presentation_files/figure-html/unnamed-chunk-4-1.png" width="80%" /&gt;
 ]
 
 .pull-right[
@@ -180,13 +164,23 @@ tidy(gender_fit)
 - Reasons/explanations for the trends we've been seeing - traditional gender roles - women in the house, men at work? Space being seen as dangerous? Men being seen as adventurers/pioneers, and not women?
 - General trend: more women in space? Any predictions/projections for the future?
 
+<<<<<<< HEAD
 Are these varying factors affected by gender? Is there a progression towards gender equality in the space industry?
+=======
+
+---
+# Hello World
+
+- Click the `Knit` button to compile your presentation
+
+- Make sure to commit and push all resulting files to your GitHub repo
+>>>>>>> be9857e6b264fab1cd05c4b56239004f12019d77
 
 ---
 
 class: inverse, middle, center
 
-# Notes on presentation syntax/formatting
+# Using xaringan
 
 ---
 
@@ -268,7 +262,11 @@ glance(model)
 - goes here
 ]
 .pull-right[
+<<<<<<< HEAD
 &lt;img src="presentation_files/figure-html/unnamed-chunk-6-1.png" width="100%" /&gt;
+=======
+&lt;img src="presentation_files/figure-html/unnamed-chunk-5-1.png" width="100%" /&gt;
+>>>>>>> be9857e6b264fab1cd05c4b56239004f12019d77
 ]
 
 ---
