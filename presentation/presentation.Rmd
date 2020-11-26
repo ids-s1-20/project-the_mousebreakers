@@ -247,7 +247,7 @@ class: inverse, center, middle
 
 ---
 
-# ROC curve 
+# ROC curve, predicting gender 
 
 ```{r, echo = FALSE}
 f_astro <- mutate(astronauts, is_female = if_else(sex == "male", 0, 1))
@@ -294,16 +294,18 @@ auc <- gender_pred %>%
 auc 
 ```
 --
-- 
+- there is a relationship between covered variables and gender of the astronauts
+--
+
+- could be further explored and compared with different statistical models
 
 ---
 # Conclusion
 
-- we've found that there is an upward trend in the number of women deployed in space missions. 
-- Reasons/explanations for the trends we've been seeing - traditional gender roles - women in the house, men at work? Space being seen as dangerous? Men being seen as adventurers/pioneers, and not women?
-- General trend: more women in space? Any predictions/projections for the future?
+Upward trend in the number of women deployed in space missions. 
+- changes in societal gender roles 
+- striving for equality in the workplace
 
-Are these varying factors affected by gender? Is there a progression towards gender equality in the space industry?
 
 ---
 
