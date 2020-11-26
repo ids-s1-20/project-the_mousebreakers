@@ -148,21 +148,88 @@ As we began to explore the data, we wondered if certain progressive countries le
 - Look into the programme in which the astronauts are enrolled in? What is the ratio of males to females in each programme? What country are these programmes held in? Is there a country in particular which is more/less progressive in gender equality?
 Adjusted R Squared Value? Is adding sex beneficial?
 
-
 ---
+#Nationality
 
-```{r, echo = FALSE}
-astronauts %>%
+
+```{r}
+#astronauts_nationality <- linear_reg() %>%
+# set_engine("lm") %>%
+ # fit(nationality ~ sex, data = astronauts)
+#tidy(astronauts_nationality)
+
   
-  group_by(year_of_selection) %>%
-  ggplot(aes(x = year_of_mission, fill = selection)) +
-  geom_bar()
-
 ```
 
 
+```{r, echo = FALSE}
+astronauts %>%
+  group_by(nationality) %>%
+  filter(sex == "female") %>% 
+  ggplot(aes(x = year_of_selection, fill = nationality)) +
+  geom_bar()
+  
+```
+
+
+
+
+
+
+
+
+
 ---
 
+#Nationality of Women in Space
+
+
+```{r, echo = FALSE}
+astronauts %>%
+  filter(sex == "female") %>%
+  mutate(nationality = fct_relevel(nationality, 
+                           "U.S.",
+                           "U.S.S.R/Russia", 
+                           "Japan", 
+                           "Canada",
+                           "France", 
+                           "China", 
+                           "Italy", 
+                           "Korea", 
+                           "U.K.")) %>%
+  mutate(nationality = fct_rev(nationality))  %>%
+  group_by(nationality) %>%
+  ggplot(aes(y = nationality, fill = nationality)) +
+  theme(legend.position = "none") +
+  geom_bar() +
+  labs(title = "Nationality of Women in the Outer-Space Workplace", 
+       y = "", 
+       x = "Number of Women")
+```
+
+---
+#Nationality of Women in Space
+
+ - Since 1959 people from over 40 different nationalities have ventured into outer-space, varying from U.K. and U.S. to Afghanistan and Mongolia. 
+ - However, 
+
+
+
+---
+
+#Progamme
+
+```{r, echo = FALSE}
+astronauts %>%
+  filter(sex == "female")
+```
+
+
+
+
+
+
+---
 # Gender and Military Status/Occupation
 - A common indicator of workplace gender inequality is women having to outperform their male counterparts to receive the same level of treatment, pay or respect.
 - Aware of this, we sought to investigate how military status affected selection for missions, and if female astronauts needed to occupy a higher military rank to be considered than males.
