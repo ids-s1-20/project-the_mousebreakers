@@ -249,8 +249,7 @@ class: inverse, center, middle
 
 ---
 
-# Gender vs Variables 
-
+# ROC curve 
 
 ```{r, echo = FALSE}
 f_astro <- mutate(astronauts, is_female = if_else(sex == "male", 0, 1))
@@ -272,11 +271,7 @@ gender_pred <- predict(gender_fit, test_data, type = "prob") %>%
   bind_cols(test_data %>% select(is_female))
 ```
 
-.pull-left[
-ROC curve for covered variables
-]
-.pull-right[
---
+
 ```{r, echo=FALSE}
 gender_pred %>%
   roc_curve (
@@ -286,7 +281,22 @@ gender_pred %>%
   ) %>%
   autoplot()
 ```
-]
+
+---
+#Area under the ROC curve
+
+```{r, echo=FALSE}
+auc <- gender_pred %>%
+  roc_auc (
+    truth = as.factor(is_female),
+    .pred_1,
+    event_level = "second"
+  )
+
+auc 
+```
+--
+- 
 
 ---
 # Conclusion
