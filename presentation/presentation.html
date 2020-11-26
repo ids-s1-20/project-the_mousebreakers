@@ -4,7 +4,7 @@
     <title>Astronauts</title>
     <meta charset="utf-8" />
     <meta name="author" content="The Mousebreakers   Bence Kaszás, Tom Gourlay, Sophie Jones, Julia Schonthaler &amp; John Adibpour" />
-    <meta name="date" content="2020-11-25" />
+    <meta name="date" content="2020-11-26" />
     <link href="libs/remark-css-0.0.1/default.css" rel="stylesheet" />
     <link href="libs/remark-css-0.0.1/default-fonts.css" rel="stylesheet" />
   </head>
@@ -16,7 +16,7 @@ class: center, middle, inverse, title-slide
 ## An investigation into the role that gender plays within the astronautical profession
 ### The Mousebreakers <br> Bence Kaszás, Tom Gourlay, Sophie Jones, Julia Schonthaler &amp; John Adibpour
 ### University of Edinburgh
-### 2020-11-25
+### 2020-11-26
 
 ---
 
@@ -55,6 +55,11 @@ class: inverse, center, middle
 # Comparing Gender with different variables
 
 ---
+class: inverse, center, middle
+
+# Country and Programme
+
+---
 
 # Gender selection by Country and Programme
 As we began to explore the data, we wondered if certain progressive countries led the introduction of women into the profession, or if all countries started to do so at the same time.
@@ -68,6 +73,16 @@ Adjusted R Squared Value? Is adding sex beneficial?
 
 ---
 
+
+```
+## Warning: position_stack requires non-overlapping x intervals
+```
+
+&lt;img src="presentation_files/figure-html/unnamed-chunk-2-1.png" width="80%" /&gt;
+
+
+---
+
 # Gender and Military Status/Occupation
 - A common indicator of workplace gender inequality is women having to outperform their male counterparts to receive the same level of treatment, pay or respect.
 - Aware of this, we sought to investigate how military status affected selection for missions, and if female astronauts needed to occupy a higher military rank to be considered than males.
@@ -77,9 +92,37 @@ Adjusted R Squared Value? Is adding sex beneficial?
 - Investigation the effect of gender and occupation. What ranking do female astronauts hold? How has this changed? Are higher ranking females more likely to be enlisted as astronauts?
 
 ---
+class: inverse, center, middle
 
 # Mission Stats
-- Compare time spent in space, total hours/mission hours, number of missions, EVA (spacewalks) or other misc data between men and women, and maybe across rank too - do higher ranks usually do EVAs? Are men higher rank on average? Do these two correlate? etc
+
+---
+#Mission Hours
+
+.pull-left[
+&lt;img src="presentation_files/figure-html/unnamed-chunk-3-1.png" width="80%" /&gt;
+]
+
+.pull-right[
+-As shown by the graphs once a women is selected they arent prejudiced in how long there mission are.
+
+-This implies women are treated the same once employed and are are no more or less likely to get longer or shorter missions than men
+]
+---
+#Recall for more missions
+.pull-left[
+&lt;img src="presentation_files/figure-html/unnamed-chunk-4-1.png" width="80%" /&gt;
+]
+
+.pull-right[
+-While women are less likely to be selected for mission they are just as likely to be selected again for multiple mission once they have completed one.
+
+-Also the probability of them being selected again as compared to men over more than 2 missions stays showing that they continue to do just as good job throughout all the missions they complete with no tail off.
+]
+
+.pull-center[
+In conclusion  women are given the same mission hours and have the same likelihood to be recalled as men. This shows that while they are less likely to be selected in the first place they are treated the same once employed.
+]
 
 ---
 
@@ -188,7 +231,7 @@ glance(model)
 - goes here
 ]
 .pull-right[
-&lt;img src="presentation_files/figure-html/unnamed-chunk-2-1.png" width="100%" /&gt;
+&lt;img src="presentation_files/figure-html/unnamed-chunk-5-1.png" width="100%" /&gt;
 ]
 
 ---

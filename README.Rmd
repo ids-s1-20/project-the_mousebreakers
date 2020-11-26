@@ -1,6 +1,6 @@
 ---
 title: Project title
-author: by Team name
+author: by The Mousebreakers
 output: github_document
 ---
 
