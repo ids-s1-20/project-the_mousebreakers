@@ -23,6 +23,7 @@ library(tidymodels)
 library(palmerpenguins)
 library(knitr)
 library(forcats)
+library(dplyr)
 ```
 
 ```{r setup, include=FALSE}
@@ -225,20 +226,42 @@ class: inverse, center, middle
 
 # Gender vs Variables 
 
-Include logistic regression, how previously mentioned variables contribute to gender, draw conclusions.
-
 
 ```{r, echo = FALSE}
-         
+f_astro <- mutate(astronauts, is_female = if_else(sex == "male", 0, 1))
+```
+
+```{r, echo = FALSE}
+set.seed(1116)
+
+astro_split <- initial_split(f_astro, prop = 0.80)
+
+train_data <- training(astro_split)
+test_data <- testing(astro_split)
+
 gender_fit <- logistic_reg() %>%
   set_engine("glm") %>%
-  fit(as.factor(sex) ~ total_number_of_missions + occupation, data = astronauts, family = "binomial")
+  fit(as.factor(is_female) ~ total_number_of_missions + occupation + year_of_selection + year_of_mission + eva_hrs_mission + hours_mission, data = train_data, family = "binomial")
 
+gender_pred <- predict(gender_fit, test_data, type = "prob") %>%
+  bind_cols(test_data %>% select(is_female))
 ```
 
-```{r}
-tidy(gender_fit)
+.pull-left[
+ROC curve for covered variables
+]
+.pull-right[
+--
+```{r, echo=FALSE}
+gender_pred %>%
+  roc_curve (
+    truth = as.factor(is_female),
+    .pred_1,
+    event_level = "second"
+  ) %>%
+  autoplot()
 ```
+]
 
 ---
 # Conclusion
