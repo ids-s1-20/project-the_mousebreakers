@@ -154,7 +154,6 @@ Adjusted R Squared Value? Is adding sex beneficial?
 
 #Nationality
 
-
 .pull-left[
 Nationality of those who have been to space:
 ```{r, echo = FALSE}
@@ -166,14 +165,20 @@ astronauts %>%
 ```
 ]
 
- - Since 1959 people from 40 different nationalities have ventured into outer-space. This includes countries such as U.S., Russia and Japan but also Mongolia, Afghanistan and Saudi Arabia. 
+.pull-right[
+- Since 1959 people from 40 different nationalities have ventured into outer-space. 
+
+- This includes countries you would expect such as the U.S. and Russia, as they are well known for their space programmes, but also lesser expectant countries such as Mongolia, Afghanistan and Saudi Arabia. 
+
+- Overall, the U.S. has the highest contribution  of astronauts at 854 followed by the U.S.S.R/Russia at 273. 
+
+- However, following this is a significant decrease with 20 Japanese nationals entering outer space and only 18 Canadians
+ ]
  
- - Overall, the U.S. has the highest contribution at 854 of astronauts followed by U.S.S.R/Russia at 273. 
- 
- - The number of astronauts from other nationalities is significant low in comparison to the U.S. and U.S.S.R/Russia. Japan has had 20 Japanese nationals enter outer of space, Canada has had 18 nationals. This is a significant difference in comparison to U.S. and U.S.S.R/Russia.
- 
- 
- 
+.footnote[
+[*] NOTE: Tibble is in decreasing order of Number of Astronauts from varying Nationalities.
+]
+
 ---
 
 #Nationality of Women in Space
@@ -204,9 +209,70 @@ astronauts %>%
 
 ---
 
-#Programme
+#Selection Programme of Women in Space
 
+```{r, echo = FALSE}
+astronauts_programme <- astronauts %>%
+  filter(sex == "female") %>%
+  mutate(selection = 
+           case_when(
+             selection == "NASA-8" ~ "NASA",
+             selection == "NASA-9" ~ "NASA", 
+             selection == "1978 NASA group" ~ "NASA",
+             selection == "NASA- 10" ~ "NASA",
+             selection == "1984 NASA group" ~ "NASA",
+             selection == "NASA Astronaut Group 11" ~ "NASA",
+             selection == "NASA Astronaut Group 12" ~ "NASA",
+             selection == "NASA Astronaut Group 13" ~ "NASA",
+             selection == "NASA Astronaut Group 14" ~ "NASA",
+             selection == "NASA- 11" ~ "NASA",
+             selection == "NASA- 12" ~ "NASA",
+             selection == "NASA- 13" ~ "NASA",
+             selection == "NASA- 14" ~ "NASA",
+             selection == "NASA- 15" ~ "NASA",
+             selection == "NASA PS" ~ "NASA",
+             selection == "1990 NASA group" ~ "NASA",
+             selection == "1992 NASA group" ~ "NASA",
+             selection == "NASA- 16" ~ "NASA",
+             selection == "NASA- 17" ~ "NASA",
+             selection == "NASA- 18" ~ "NASA",
+             selection == "NASA- 19" ~ "NASA",
+             selection == "NASA- 8" ~ "NASA",
+             selection == "NASA- 9" ~ "NASA",
+             selection == "NASA-16" ~ "NASA",
+             selection == "NASA-20" ~ "NASA",
+             selection == "NASA-21" ~ "NASA",
+             selection == "2004 NASA group" ~ "NASA",
+             selection == "2000 NASA group" ~ "NASA",
+             selection == "1998 NASA group" ~ "NASA",
+             selection == "1996 NASA group" ~ "NASA",
+             selection == "1992 NASA group" ~ "NASA",
+             selection == "1963 NASA group 2" ~ "NASA",
+             selection == "NASA-13" ~ "NASA",
+             selection == "NASDA-1" ~ "NASDA", 
+             selection == "NASDA-4" ~ "NASDA",
+             selection == "NASDA-13" ~ "NASDA",
+             TRUE ~ selection))
+```
 
+```{r, echo = FALSE}
+astronauts_programme %>%
+  mutate(selection = fct_relevel(selection, 
+                                 "NASA", 
+                                 "NASDA", 
+                                 "NPOE-9", 
+                                 "CNES-2/EAC", 
+                                 "MAP",
+                                 "1992 CSA Group"
+                                 )) %>%
+  ggplot(aes(y = selection, fill = selection)) +
+  theme(legend.position = "none") +
+  geom_bar() + 
+  labs(x = "Number of Astronauts", 
+       y = "", 
+       title = "Selection Programme that Women Enrolled In")
+
+```
 
 
 
