@@ -23,6 +23,8 @@ library(tidymodels)
 library(palmerpenguins)
 library(knitr)
 library(forcats)
+library(dplyr)
+library(knitr)
 ```
 
 ```{r setup, include=FALSE}
@@ -149,36 +151,29 @@ As we began to explore the data, we wondered if certain progressive countries le
 Adjusted R Squared Value? Is adding sex beneficial?
 
 ---
+
 #Nationality
 
 
-```{r}
-#astronauts_nationality <- linear_reg() %>%
-# set_engine("lm") %>%
- # fit(nationality ~ sex, data = astronauts)
-#tidy(astronauts_nationality)
-
-  
-```
-
-
+.pull-left[
+Nationality of those who have been to space:
 ```{r, echo = FALSE}
 astronauts %>%
   group_by(nationality) %>%
-  filter(sex == "female") %>% 
-  ggplot(aes(x = year_of_selection, fill = nationality)) +
-  geom_bar()
+  count() %>%
+  arrange(desc(n))
   
 ```
+]
 
-
-
-
-
-
-
-
-
+ - Since 1959 people from 40 different nationalities have ventured into outer-space. This includes countries such as U.S., Russia and Japan but also Mongolia, Afghanistan and Saudi Arabia. 
+ 
+ - Overall, the U.S. has the highest contribution at 854 of astronauts followed by U.S.S.R/Russia at 273. 
+ 
+ - The number of astronauts from other nationalities is significant low in comparison to the U.S. and U.S.S.R/Russia. Japan has had 20 Japanese nationals enter outer of space, Canada has had 18 nationals. This is a significant difference in comparison to U.S. and U.S.S.R/Russia.
+ 
+ 
+ 
 ---
 
 #Nationality of Women in Space
@@ -208,11 +203,17 @@ astronauts %>%
 ```
 
 ---
-#Nationality of Women in Space
 
- - Since 1959 people from over 40 different nationalities have ventured into outer-space, varying from U.K. and U.S. to Afghanistan and Mongolia. 
- - However, 
+#Programme
 
+
+
+
+
+---
+class: inverse, center, middle
+
+# Military Status and Occupation
 
 
 ---
@@ -233,10 +234,29 @@ astronauts %>%
 # Gender and Military Status/Occupation
 - A common indicator of workplace gender inequality is women having to outperform their male counterparts to receive the same level of treatment, pay or respect.
 - Aware of this, we sought to investigate how military status affected selection for missions, and if female astronauts needed to occupy a higher military rank to be considered than males.
-- 
+.pull-left[
+
+We researched and rearranged the military ranks inside the occupation variable based on who was the highest ranking in each mission, and as shown at the table, it starts at the commander level and goes all the way down to space tourist.
+
+]
+.pull-right[
+```{r occup_levels, echo = FALSE}
+astronauts %>% 
+  select(occupation) %>% 
+  sapply(levels) %>% 
+  kable(format = "html")
+```
+]
+
+
+---
+
 - Analyse the role of sex in relationship to military status. Are females of Military Status more likely to become astronauts? Or are more civilian females enlisted?
 Adjusted R Squared Value? Is adding sex beneficial?
 - Investigation the effect of gender and occupation. What ranking do female astronauts hold? How has this changed? Are higher ranking females more likely to be enlisted as astronauts?
+
+
+
 
 ---
 class: inverse, center, middle
@@ -290,10 +310,65 @@ class: inverse, center, middle
 
 ---
 
+# ROC curve, predicting gender 
+
+```{r, echo = FALSE}
+f_astro <- mutate(astronauts, is_female = if_else(sex == "male", 0, 1))
+```
+
+```{r, echo = FALSE}
+set.seed(1116)
+
+astro_split <- initial_split(f_astro, prop = 0.80)
+
+train_data <- training(astro_split)
+test_data <- testing(astro_split)
+
+gender_fit <- logistic_reg() %>%
+  set_engine("glm") %>%
+  fit(as.factor(is_female) ~ total_number_of_missions + occupation + year_of_selection + year_of_mission + eva_hrs_mission + hours_mission, data = train_data, family = "binomial")
+
+gender_pred <- predict(gender_fit, test_data, type = "prob") %>%
+  bind_cols(test_data %>% select(is_female))
+```
+
+
+```{r, echo=FALSE}
+gender_pred %>%
+  roc_curve (
+    truth = as.factor(is_female),
+    .pred_1,
+    event_level = "second"
+  ) %>%
+  autoplot()
+```
+
+---
+#Area under the ROC curve
+
+```{r, echo=FALSE}
+auc <- gender_pred %>%
+  roc_auc (
+    truth = as.factor(is_female),
+    .pred_1,
+    event_level = "second"
+  )
+
+auc 
+```
+--
+- there is a relationship between covered variables and gender of the astronauts
+--
+
+- could be further explored and compared with different statistical models
+
+---
 # Conclusion
-In conclusion, we've found that ....
-- Reasons/explainations for the trends we've been seeing - traditional gender roles - women in the house, men at work? Space being seen as dangerous? Men being seen as adventurers/pioneers, and not women?
-- General trend: more women in space? Any predictions/projections for the future?
+
+Upward trend in the number of women deployed in space missions. 
+- changes in societal gender roles 
+- striving for equality in the workplace
+
 
 ---
 

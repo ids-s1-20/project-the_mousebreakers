@@ -4,7 +4,7 @@
     <title>Astronauts</title>
     <meta charset="utf-8" />
     <meta name="author" content="The Mousebreakers   Bence Kaszás, Tom Gourlay, Sophie Jones, Julia Schönthaler &amp; John Adibpour" />
-    <meta name="date" content="2020-11-26" />
+    <meta name="date" content="2020-11-27" />
     <link href="libs/remark-css-0.0.1/default.css" rel="stylesheet" />
     <link href="libs/remark-css-0.0.1/default-fonts.css" rel="stylesheet" />
   </head>
@@ -16,7 +16,7 @@ class: center, middle, inverse, title-slide
 ## An investigation into the role that gender plays within the outer-space workplace!
 ### The Mousebreakers <br> Bence Kaszás, Tom Gourlay, Sophie Jones, Julia Schönthaler &amp; John Adibpour
 ### University of Edinburgh
-### 2020-11-26
+### 2020-11-27
 
 ---
 
@@ -102,46 +102,59 @@ As we began to explore the data, we wondered if certain progressive countries le
 Adjusted R Squared Value? Is adding sex beneficial?
 
 ---
+
 #Nationality
 
 
-
-```r
-#astronauts_nationality &lt;- linear_reg() %&gt;%
-# set_engine("lm") %&gt;%
- # fit(nationality ~ sex, data = astronauts)
-#tidy(astronauts_nationality)
-```
-
-
+.pull-left[
+Nationality of those who have been to space:
 
 ```
-## Warning: position_stack requires non-overlapping x intervals
+## # A tibble: 40 x 2
+## # Groups:   nationality [40]
+##    nationality        n
+##    &lt;chr&gt;          &lt;int&gt;
+##  1 U.S.             854
+##  2 U.S.S.R/Russia   273
+##  3 Japan             20
+##  4 Canada            18
+##  5 France            18
+##  6 Germany           16
+##  7 China             14
+##  8 Italy             13
+##  9 U.K./U.S.          6
+## 10 Australia          4
+## # … with 30 more rows
 ```
+]
+
+ - Since 1959 people from 40 different nationalities have ventured into outer-space. This includes countries such as U.S., Russia and Japan but also Mongolia, Afghanistan and Saudi Arabia. 
+ 
+ - Overall, the U.S. has the highest contribution at 854 of astronauts followed by U.S.S.R/Russia at 273. 
+ 
+ - The number of astronauts from other nationalities is significant low in comparison to the U.S. and U.S.S.R/Russia. Japan has had 20 Japanese nationals enter outer of space, Canada has had 18 nationals. This is a significant difference in comparison to U.S. and U.S.S.R/Russia.
+ 
+ 
+ 
+---
+
+#Nationality of Women in Space
+
 
 &lt;img src="presentation_files/figure-html/unnamed-chunk-3-1.png" width="80%" /&gt;
 
+---
 
-
-
+#Programme
 
 
 
 
 
 ---
+class: inverse, center, middle
 
-#Nationality of Women in Space
-
-
-&lt;img src="presentation_files/figure-html/unnamed-chunk-4-1.png" width="80%" /&gt;
-
----
-#Nationality of Women in Space
-
- - Since 1959 people from over 40 different nationalities have ventured into outer-space, varying from U.K. and U.S. to Afghanistan and Mongolia. 
- - However, 
-
+# Military Status and Occupation
 
 
 ---
@@ -181,10 +194,50 @@ Adjusted R Squared Value? Is adding sex beneficial?
 # Gender and Military Status/Occupation
 - A common indicator of workplace gender inequality is women having to outperform their male counterparts to receive the same level of treatment, pay or respect.
 - Aware of this, we sought to investigate how military status affected selection for missions, and if female astronauts needed to occupy a higher military rank to be considered than males.
-- 
+.pull-left[
+
+We researched and rearranged the military ranks inside the occupation variable based on who was the highest ranking in each mission, and as shown at the table, it starts at the commander level and goes all the way down to space tourist.
+
+]
+.pull-right[
+&lt;table&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt; occupation &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; commander &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; pilot &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; mission specialist &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; flight engineer &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; payload specialist &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; space tourist &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+]
+
+
+---
+
 - Analyse the role of sex in relationship to military status. Are females of Military Status more likely to become astronauts? Or are more civilian females enlisted?
 Adjusted R Squared Value? Is adding sex beneficial?
 - Investigation the effect of gender and occupation. What ranking do female astronauts hold? How has this changed? Are higher ranking females more likely to be enlisted as astronauts?
+
+
+
 
 ---
 class: inverse, center, middle
@@ -195,7 +248,7 @@ class: inverse, center, middle
 #Mission Hours
 
 .pull-left[
-&lt;img src="presentation_files/figure-html/unnamed-chunk-6-1.png" width="80%" /&gt;
+&lt;img src="presentation_files/figure-html/unnamed-chunk-5-1.png" width="80%" /&gt;
 ]
 
 .pull-right[
@@ -206,7 +259,7 @@ class: inverse, center, middle
 ---
 #Recall for more missions
 .pull-left[
-&lt;img src="presentation_files/figure-html/unnamed-chunk-7-1.png" width="80%" /&gt;
+&lt;img src="presentation_files/figure-html/unnamed-chunk-6-1.png" width="80%" /&gt;
 ]
 
 .pull-right[
@@ -227,10 +280,38 @@ class: inverse, center, middle
 
 ---
 
+# ROC curve, predicting gender 
+
+
+
+
+
+
+&lt;img src="presentation_files/figure-html/unnamed-chunk-9-1.png" width="80%" /&gt;
+
+---
+#Area under the ROC curve
+
+
+```
+## # A tibble: 1 x 3
+##   .metric .estimator .estimate
+##   &lt;chr&gt;   &lt;chr&gt;          &lt;dbl&gt;
+## 1 roc_auc binary         0.740
+```
+--
+- there is a relationship between covered variables and gender of the astronauts
+--
+
+- could be further explored and compared with different statistical models
+
+---
 # Conclusion
-In conclusion, we've found that ....
-- Reasons/explainations for the trends we've been seeing - traditional gender roles - women in the house, men at work? Space being seen as dangerous? Men being seen as adventurers/pioneers, and not women?
-- General trend: more women in space? Any predictions/projections for the future?
+
+Upward trend in the number of women deployed in space missions. 
+- changes in societal gender roles 
+- striving for equality in the workplace
+
 
 ---
 
@@ -318,7 +399,7 @@ glance(model)
 - goes here
 ]
 .pull-right[
-&lt;img src="presentation_files/figure-html/unnamed-chunk-8-1.png" width="100%" /&gt;
+&lt;img src="presentation_files/figure-html/unnamed-chunk-11-1.png" width="100%" /&gt;
 ]
 
 ---
