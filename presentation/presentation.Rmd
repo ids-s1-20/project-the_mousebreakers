@@ -25,6 +25,7 @@ library(knitr)
 library(forcats)
 library(dplyr)
 library(knitr)
+library(patchwork)
 ```
 
 ```{r setup, include=FALSE}
@@ -281,21 +282,6 @@ class: inverse, center, middle
 
 # Military Status and Occupation
 
-
----
-
-#Progamme
-
-```{r, echo = FALSE}
-astronauts %>%
-  filter(sex == "female")
-```
-
-
-
-
-
-
 ---
 # Gender and Military Status/Occupation
 - A common indicator of workplace gender inequality is women having to outperform their male counterparts to receive the same level of treatment, pay or respect.
@@ -321,6 +307,27 @@ astronauts %>%
 Adjusted R Squared Value? Is adding sex beneficial?
 - Investigation the effect of gender and occupation. What ranking do female astronauts hold? How has this changed? Are higher ranking females more likely to be enlisted as astronauts?
 
+```{r, echo=FALSE}
+p1 <- astronauts %>% 
+  select(occupation, sex) %>% 
+  ggplot(aes(x = occupation, fill = sex)) +
+  geom_bar() +
+  theme(legend.position = NULL)
+
+p2 <- astronauts %>% 
+  filter(sex == "female") %>% 
+  select(occupation) %>% 
+  ggplot(aes(x = occupation)) +
+  geom_bar()
+
+p3 <- astronauts %>% 
+  filter(sex == "male") %>% 
+  select(occupation) %>% 
+  ggplot(aes(x = occupation)) +
+  geom_bar()
+
+p1 + p2 + p3
+```
 
 
 
