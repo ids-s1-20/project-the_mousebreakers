@@ -275,7 +275,27 @@ astronauts_programme %>%
 
 ```
 
+---
+#Selection Programme of Women in Space by Nationality 
 
+```{r,echo = FALSE}
+astronauts_programme %>%
+  mutate(selection = fct_relevel(selection, 
+                                 "NASA", 
+                                 "NASDA", 
+                                 "NPOE-9", 
+                                 "CNES-2/EAC", 
+                                 "MAP",
+                                 "1992 CSA Group"
+                                 )) %>%
+  ggplot(aes(y = selection, fill = nationality)) +
+  geom_bar() + 
+  labs(x = "Number of Astronauts", 
+       y = "", 
+       title = "Selection Programme that Women Enrolled In",
+       subtitle = "By Nationality", 
+       fill = "Nationality")
+```
 
 ---
 class: inverse, center, middle
