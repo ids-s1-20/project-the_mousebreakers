@@ -26,6 +26,7 @@ library(forcats)
 library(dplyr)
 library(knitr)
 library(patchwork)
+library(tidyr)
 ```
 
 ```{r setup, include=FALSE}
@@ -322,33 +323,63 @@ astronauts %>%
 
 
 ---
-
+.pull-left[
 - Analyse the role of sex in relationship to military status. Are females of Military Status more likely to become astronauts? Or are more civilian females enlisted?
 Adjusted R Squared Value? Is adding sex beneficial?
 - Investigation the effect of gender and occupation. What ranking do female astronauts hold? How has this changed? Are higher ranking females more likely to be enlisted as astronauts?
-
-```{r, echo=FALSE}
+]
+.pull-right[
+```{r mil-civ,echo = FALSE, fig.width = 6}
 p1 <- astronauts %>% 
-  select(occupation, sex) %>% 
-  ggplot(aes(x = occupation, fill = sex)) +
-  geom_bar() +
-  theme(legend.position = NULL)
+  count(military_civilian) %>% 
+  ggplot(aes(x = military_civilian, y = n, fill = military_civilian)) +
+  geom_col() +
+  labs(y = "Number of astronauts",
+       x = NULL, 
+       title = "All Astronauts")+
+  theme(legend.position = "none")
 
-p2 <- astronauts %>% 
+p2 <- astronauts %>%
   filter(sex == "female") %>% 
-  select(occupation) %>% 
-  ggplot(aes(x = occupation)) +
-  geom_bar()
-
+  count(military_civilian) %>% 
+  ggplot(aes(x = military_civilian, y = n, fill = military_civilian)) +
+  geom_col() +
+  labs(y = NULL,
+       x = NULL, 
+       title = "Female Astronauts")+
+  theme(legend.position = "none")
+  
 p3 <- astronauts %>% 
   filter(sex == "male") %>% 
-  select(occupation) %>% 
-  ggplot(aes(x = occupation)) +
-  geom_bar()
-
+  count(military_civilian) %>% 
+  ggplot(aes(x = military_civilian, y = n, fill = military_civilian)) +
+  geom_col() +
+  labs(y = NULL,
+       x = NULL, 
+       title = "Male Astronauts") +
+  theme(legend.position = "none")
+  
 p1 + p2 + p3
 ```
-
+]
+.pull-right[
+```{r mil-civ-time, echo = FALSE}
+astronauts %>% 
+  filter(sex == "female") %>%
+  group_by(year_of_mission) %>% 
+  mutate(n_mil = sum(military_civilian == "military"),
+         n_civ = sum(military_civilian == "civilian")) %>% 
+  select(n_mil, n_civ, year_of_mission) %>% 
+  ggplot(aes(x = year_of_mission, y = n_civ)) +
+  geom_smooth(se = FALSE) +
+  geom_smooth(aes(x = year_of_mission, y = n_mil), color= "red", se = FALSE) +
+  labs(y = "Number of Female Astronauts",
+       x = "Year of the mission",
+       title = "Number of Female Astronauts sent on Missions",
+       subtitle = "by civilian status, over time")
+  
+```
+]
 
 
 ---
