@@ -313,6 +313,7 @@ We researched and rearranged the military ranks inside the occupation variable b
 
 ]
 .pull-right[
+Order of Military ranking:
 ```{r occup_levels, echo = FALSE}
 astronauts %>% 
   select(occupation) %>% 
@@ -323,12 +324,12 @@ astronauts %>%
 
 
 ---
+#Occupation
+
+
+
+
 .pull-left[
-- Analyse the role of sex in relationship to military status. Are females of Military Status more likely to become astronauts? Or are more civilian females enlisted?
-Adjusted R Squared Value? Is adding sex beneficial?
-- Investigation the effect of gender and occupation. What ranking do female astronauts hold? How has this changed? Are higher ranking females more likely to be enlisted as astronauts?
-]
-.pull-right[
 ```{r mil-civ,echo = FALSE, fig.width = 6}
 p1 <- astronauts %>% 
   count(military_civilian) %>% 
@@ -361,27 +362,36 @@ p3 <- astronauts %>%
   
 p1 + p2 + p3
 ```
-]
-.pull-right[
-```{r mil-civ-time, echo = FALSE}
+
+```{r mil-civ-time, echo = FALSE, message=FALSE, fig.width = 6}
 astronauts %>% 
   filter(sex == "female") %>%
   group_by(year_of_mission) %>% 
   mutate(n_mil = sum(military_civilian == "military"),
          n_civ = sum(military_civilian == "civilian")) %>% 
   select(n_mil, n_civ, year_of_mission) %>% 
-  ggplot(aes(x = year_of_mission, y = n_civ)) +
-  geom_smooth(se = FALSE) +
-  geom_smooth(aes(x = year_of_mission, y = n_mil), color= "red", se = FALSE) +
+  ggplot(aes(x = year_of_mission, y = n_civ + n_mil)) +
+  geom_smooth(se = FALSE, aes(x = year_of_mission, y = n_civ,color = "Civilian")) +
+  geom_smooth(aes(x = year_of_mission, y = n_mil, color= "Military"), se = FALSE) +
   labs(y = "Number of Female Astronauts",
        x = "Year of the mission",
        title = "Number of Female Astronauts sent on Missions",
-       subtitle = "by civilian status, over time")
+       subtitle = "by occupation, over time") +
+  scale_color_discrete(name = "Occupation")
   
 ```
 ]
 
+.pull-right[
+- A higher proportion of all the astronauts are in the military (~60%).
+- If we look at the genders of the astronauts separately, a much smaller proportion of women who were in space are in the military (~25%).
+- Looking at only the male astronauts, we can see that they have higher than average proportion of astronauts with military status (~64%) and fewer civilians.
 
+
+- While the number of civilian female astronauts has always been higher than the military affiliated ones, the difference between the two has been getting smaller.
+- Both curves have a peak around the late 90's and have been decreasing ever since, but this is due to the decrease in the overall number of missions.
+
+]
 ---
 class: inverse, center, middle
 
