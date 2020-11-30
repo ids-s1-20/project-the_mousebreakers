@@ -142,17 +142,6 @@ class: inverse, center, middle
 
 ---
 
-# Gender selection by Country and Programme
-As we began to explore the data, we wondered if certain progressive countries led the introduction of women into the profession, or if all countries started to do so at the same time.
-- We found that:
-- As shown by the data, the first female astronauts were introduced in the ____ missions, ....
-- variable "selection" is programme
-- *graph*
-- Look into the programme in which the astronauts are enrolled in? What is the ratio of males to females in each programme? What country are these programmes held in? Is there a country in particular which is more/less progressive in gender equality?
-Adjusted R Squared Value? Is adding sex beneficial?
-
----
-
 #Nationality
 
 .pull-left[
@@ -210,7 +199,7 @@ astronauts %>%
 
 ---
 
-#Selection Programme of Women in Space
+#Selection Programme of Women in Space by Nationality 
 
 ```{r, echo = FALSE}
 astronauts_programme <- astronauts %>%
@@ -255,28 +244,6 @@ astronauts_programme <- astronauts %>%
              selection == "NASDA-13" ~ "NASDA",
              TRUE ~ selection))
 ```
-
-```{r, echo = FALSE}
-astronauts_programme %>%
-  mutate(selection = fct_relevel(selection, 
-                                 "NASA", 
-                                 "NASDA", 
-                                 "NPOE-9", 
-                                 "CNES-2/EAC", 
-                                 "MAP",
-                                 "1992 CSA Group"
-                                 )) %>%
-  ggplot(aes(y = selection, fill = selection)) +
-  theme(legend.position = "none") +
-  geom_bar() + 
-  labs(x = "Number of Astronauts", 
-       y = "", 
-       title = "Selection Programme that Women Enrolled In")
-
-```
-
----
-#Selection Programme of Women in Space by Nationality 
 
 ```{r,echo = FALSE}
 astronauts_programme %>%
