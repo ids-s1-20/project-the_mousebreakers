@@ -24,7 +24,6 @@ library(palmerpenguins)
 library(knitr)
 library(forcats)
 library(dplyr)
-library(knitr)
 library(patchwork)
 library(tidyr)
 ```
@@ -304,27 +303,57 @@ class: inverse, center, middle
 # Military Status and Occupation
 
 ---
-# Gender and Military Status/Occupation
-- A common indicator of workplace gender inequality is women having to outperform their male counterparts to receive the same level of treatment, pay or respect.
-- Aware of this, we sought to investigate how military status affected selection for missions, and if female astronauts needed to occupy a higher military rank to be considered than males.
+# Occupation
+
 .pull-left[
-
-We researched and rearranged the military ranks inside the occupation variable based on who was the highest ranking in each mission, and as shown at the table, it starts at the commander level and goes all the way down to space tourist.
-
-]
-.pull-right[
-Order of Military ranking:
-```{r occup_levels, echo = FALSE}
-astronauts %>% 
-  select(occupation) %>% 
-  sapply(levels) %>% 
-  kable(format = "html")
+```{r mil-stat, echo = FALSE}
+ astronauts %>% 
+  filter(sex == "female",
+         occupation != "space tourist") %>% 
+  count(occupation) %>% 
+  ggplot(aes(x = occupation, y = n, fill = occupation)) +
+  geom_col() +
+  theme(legend.position = "none") +
+  labs(y = "Number of astronauts",
+       x = NULL, 
+       title = "Number of Astronauts by gender and occupation", 
+       subtitle = "Female Astronauts")
+  
+  
+ astronauts %>% 
+  filter(sex == "male",
+         occupation != "space tourist") %>% 
+  count(occupation) %>% 
+  ggplot(aes(x = occupation, y = n, fill = occupation)) +
+  geom_col() +
+  theme(legend.position = "none") +
+  labs(y = NULL,
+       x = NULL, 
+       subtitle = "Male Astronauts")
+ 
 ```
+
 ]
+
+.pull-right[
+- The two plots show a drastic difference between the occupation levels of the male and female astronauts.
+- There are very few high ranking female astronauts, and most of them are mission specialists, meaning that they were selected for a specific mission, and usually are scientists, not part of the military.
+- Male astronauts are more likely to be hogher ranking, meaning that there are signs of gender inequality in the astronaut industry.
 
 
 ---
-#Occupation
+
+]
+
+.pull.right[
+- A common indicator of workplace gender inequality is women having to outperform their male counterparts to receive the same level of treatment, pay or respect.
+- Aware of this, we sought to investigate how military status affected selection for missions, and if female astronauts needed to occupy a higher military rank to be considered than males.
+
+We researched and rearranged the military ranks inside the occupation variable based on who was the highest ranking in each mission, and as shown at the table, it starts at the commander level and goes all the way down to space tourist.
+]
+
+---
+#Military Status
 
 
 
@@ -376,8 +405,8 @@ astronauts %>%
   labs(y = "Number of Female Astronauts",
        x = "Year of the mission",
        title = "Number of Female Astronauts sent on Missions",
-       subtitle = "by occupation, over time") +
-  scale_color_discrete(name = "Occupation")
+       subtitle = "by military status, over time") +
+  scale_color_discrete(name = "Military Status")
   
 ```
 ]
