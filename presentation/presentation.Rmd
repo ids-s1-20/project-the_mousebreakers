@@ -378,29 +378,6 @@ astronauts %>%
 ]
 ---
 
-Even though the number of female commanders and pilots is close to zero, there is an upward trend in the selection of female flight engineers and a downward trend in mission specialists, meaning that women are likely not just being chosen for a mission in the recent years because they are experts in a specific scientific area, but their military experience is considered too.
-
-
-```{r milstat-time, echo = FALSE, fig.height = 6 }
-astronauts %>% 
-  filter(sex == "female",
-         occupation != "space tourist") %>% 
-  group_by(year_of_mission) %>% 
-  count(occupation) %>% 
-  ggplot(aes(x = year_of_mission, y = n, group = occupation, color = occupation)) +
-  geom_line() + 
-  labs(
-    y = "Number of astronauts", 
-    x = "Year of Mission",
-    color = "Occupation"
-  )
-```
-
-
-
-
-
----
 class: inverse, center, middle
 
 # Mission Stats
