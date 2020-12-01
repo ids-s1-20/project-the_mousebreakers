@@ -11,8 +11,8 @@ words. To use the word count addin, select the text you want to count
 the words of (probably this is the Summary section of this document, go
 to Addins, and select the `Word count` addin). This addin counts words
 using two different algorithms, but the results should be similar and as
-long as you’re in the ballpark of 750 words, you’re good! The addin will
-ignore code chunks and only count the words in prose.
+long as you’re in the ballpark of 750 words, you’re good\! The addin
+will ignore code chunks and only count the words in prose.
 
 You can also load your data here and present any analysis results /
 plots, but I strongly urge you to keep that to a minimum (maybe only the
@@ -25,6 +25,7 @@ your project.
 ## Presentation
 
 Our presentation can be found [here](presentation/presentation.html).
+<https://media.ed.ac.uk/media/The+Mousebreakers+-+Astronauts/1_zva3l3ss>
 
 ## Data
 
