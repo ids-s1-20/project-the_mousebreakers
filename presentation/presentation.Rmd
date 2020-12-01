@@ -146,11 +146,6 @@ include_graphics("https://techcrunch.com/wp-content/uploads/2016/01/nasa-spacewa
   
 ```
 
----
-
-class: inverse, center, middle
-
-# Comparing Gender with different variables
 
 ---
 class: inverse, center, middle
