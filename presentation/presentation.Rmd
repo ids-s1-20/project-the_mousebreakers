@@ -387,7 +387,9 @@ astronauts %>%
 
 .pull-right[
 - The two plots show a drastic difference between the occupation levels of the male and female astronauts.
+
 - There are very few high ranking female astronauts, and most of them are mission specialists, meaning that they were selected for a specific mission, and usually are scientists, not part of the military.
+
 - Male astronauts are more likely to be higher ranking, meaning that there are signs of gender inequality in the astronaut industry.
 
 ]
@@ -407,7 +409,7 @@ astronauts %>%
   labs(
     y = "Number of astronauts", 
     x = "Year of Mission",
-    legend = "Occupation"
+    color = "Occupation"
   )
 ```
 
@@ -529,9 +531,17 @@ auc
 
 ---
 # Conclusion
+The variables do contribute to the gender of the astronaut.
 
-Upward trend in the number of women deployed in space missions. 
+
+Upward trend in the number of women deployed in space missions. Possible causes:
+
 - changes in societal gender roles 
 - striving for equality in the workplace
 
+---
 
+class: inverse, center, middle
+
+# Thank You for Your Attention
+author: "The Mousebreakers <br> Bence Kaszás, Tom Gourlay, Sophie Jones, Julia Schönthaler & John Adibpour"
