@@ -1,6 +1,6 @@
 ---
 title: "Astronauts"
-subtitle: "An investigation into the role that gender plays within the outer-space workplace!"
+subtitle: "An investigation into the role that gender plays within the outer-space workplace"
 author: "The Mousebreakers <br> Bence Kaszás, Tom Gourlay, Sophie Jones, Julia Schönthaler & John Adibpour"
 institute: "University of Edinburgh"
 date: "`r Sys.Date()`"
@@ -67,10 +67,26 @@ class: inverse, center, middle
 ---
 
 # Introduction to the Dataset
-The space industry is known for being male dominated, starting from before the first *man* on the moon, and continuing with current-day pioneers like Elon Musk. While this may be due to space-related occupations being primarily populated by STEM graduates, a notoriously gender-imbalanced field, we couldn't help but note the surprising lack of female representation in space when skimming through the "astronauts" dataset that we found in the TidyTuesday database, despite the recent push for women in STEM fields. Is there a deeper-rooted, systemic problem with gender in space? We intend to find out!
--  Any other things to say regarding statements of the overall goal / research
-However, in recent years the proportion of males to females has begun to equalise. 
+.pull-left[
+```{r echo = FALSE, out.width = "200%"}
 
+astronauts %>%
+  ggplot(aes(x = year_of_selection, fill = sex)) + 
+  geom_bar(position = "fill")+
+  labs(title = "The proportion of male/female astronauts selected, by year",
+       x = "Year of selection",
+       y = "Percentage of male/female astronauts",
+       caption = "Data from TidyTuesday's Astronaut Database")+
+  theme(legend.title = element_blank())+
+  scale_y_continuous(labels = scales::percent) 
+
+```
+]
+.pull-right[
+- The space industry has been male-dominated from the start
+- We were surprised at the lack of female representation in space when skimming through the "astronauts" dataset from the TidyTuesday database. 
+- Is there a deeper-rooted, systemic problem with gender in space? We intend to find out!
+]
 
 ---
 
@@ -95,7 +111,7 @@ astronauts %>%
 .pull-left[
 - The first woman in space was Valentina Tereshkova in 1963, the next being 19 years later! Both were from the Soviet Union.
 - While a number of American women successfully underwent the astronaut selection process in the early 1960s, they were not eligible to be astronauts; all astronauts were required to be military test pilots, a career not available to women at the time.
-- NASA opened the space program to female applicants in 1978, in response to new anti-discrimination laws. When Sally Ride became the first female U.S. astronaut to go into space, the media asked her questions about her reproductive organs and whether she would cry if things went wrong on the job. 
+- NASA opened the space program to female applicants in 1978, in response to new anti-discrimination laws.
 ]
 
 ```{r First female astronaut, echo = FALSE, out.width = "25%", fig.align = "center", fig.cap = "Valentina Tereshkova, Copyright RSC Energia"}
@@ -108,8 +124,7 @@ include_graphics("https://anotherimg-dazedgroup.netdna-ssl.com/482/azure/another
 
 .pull-left[
 - Material concerns may explain trends in EVA (spacewalk) time, for example; the low number of produced smaller sized space suits has been hindering women astronauts to do EVAs because of a lack of fitting suits.
-- Due to the currently used risk models for endometrial, ovarian and breast cancer, women at NASA can currently only spend half as much time on missions as men, thereby limiting their career options compared to men, as both male and female astronauts are not allowed to accumulate a radiation dose that would increase their lifetime risk of developing fatal cancer by more than 3 percent. 
-- NASA reports initially argued that menstruation could pose serious health risks or have a negative effect on performance, although it is now dealt with as a matter of routine.
+- Women at NASA can currently only spend around half as much time on missions as men, thereby limiting their career options compared to men, as both male and female astronauts are not allowed to accumulate a radiation dose that would increase their lifetime risk of developing fatal cancer by more than 3 percent. 
 ]
 
 ```{r spacewalk, echo = FALSE, out.width = "40%", fig.align = "center", fig.cap = "Spacewalk, Copyright NASA"}
