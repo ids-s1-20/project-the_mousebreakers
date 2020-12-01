@@ -422,49 +422,38 @@ class: inverse, center, middle
 ---
 #Mission Hours
 
-.pull-left[
+
 ```{r, echo = FALSE}
-astronauts %>%
+
+Violin <- astronauts %>%
 ggplot(aes(y = hours_mission, x = sex, fill = sex)) +
   geom_violin() +
   labs(x = "Gender", y = "Mission Hours")
 
-astronauts %>%
+
+Violin_filter <- astronauts %>%
     filter(hours_mission < 1000) %>%
 ggplot(aes(y = hours_mission, x = sex, fill = sex)) +
   geom_violin() +
   labs(x = "Gender", y = "Mission Hours")
 
+Violin + Violin_filter
 
 ```
-]
 
-.pull-right[
-- As shown by the graphs once a women is selected they aren't prejudiced in how long there mission are shown by the similarties in shape.
 
-- This implies women are treated the same once employed and are are no more or less likely to get longer or shorter missions than men.
 
-- However for missions over 7500 hours women are not selected, however missions of this length make up only `r sum(astronauts$hours_mission > 7500)` of 1227 missions so appears to be statistically insignificant.
-]
+
 ---
 #Recall for more missions
-.pull-left[
+
 ```{r, echo = FALSE} 
 astronauts %>%
 ggplot(aes(x = total_number_of_missions, fill = sex)) +
-  geom_bar(position = "fill")
+  geom_bar(position = "fill") +
+  labs(x = "Total number of missions",
+       y = "Ratio of men and Women being recalled")
 ```
-]
-
-.pull-right[
-- While women are less likely to be selected for mission they are just as likely to be selected again for multiple mission once they have completed one.
-
-- Also the probability of them being selected again as compared to men over more than 2 missions stays showing that they continue to do just as good job throughout all the missions they complete with no tail off.
-]
-
-.pull-center[
-In conclusion  women are given the same mission hours and have the same likelihood to be recalled as men. This shows that while they are less likely to be selected in the first place they are treated the same once employed.
-]
 
 ---
 
