@@ -82,6 +82,7 @@ astronauts %>%
 
 ```
 ]
+
 .pull-right[
 - The space industry has been male-dominated from the start
 - We were surprised at the lack of female representation in space when skimming through the "astronauts" dataset from the TidyTuesday database. 
@@ -89,23 +90,6 @@ astronauts %>%
 ]
 
 ---
-
-# Introduction to the Dataset
-```{r echo = FALSE}
-
-astronauts %>%
-  ggplot(aes(x = year_of_selection, fill = sex)) + 
-  geom_bar(position = "fill")+
-  labs(title = "The proportion of male/female astronauts selected, by year",
-       x = "Year of selection",
-       y = "Percentage of male/female astronauts",
-       caption = "Data from TidyTuesday's Astronaut Database")+
-  theme(legend.title = element_blank())+
-  scale_y_continuous(labels = scales::percent) 
-
-```
----
-
 # Women in space
 
 .pull-left[
@@ -145,6 +129,8 @@ theme(legend.position = "none")
 include_graphics("https://techcrunch.com/wp-content/uploads/2016/01/nasa-spacewalk.jpg?w=1390&crop=1")
   
 ```
+
+
 
 
 ---
