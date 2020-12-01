@@ -428,14 +428,16 @@ class: inverse, center, middle
 Violin <- astronauts %>%
 ggplot(aes(y = hours_mission, x = sex, fill = sex)) +
   geom_violin() +
-  labs(x = "Gender", y = "Mission Hours")
+  labs(x = "Gender", y = "Mission Hours") +
+  theme(legend.position = "none")
 
 
 Violin_filter <- astronauts %>%
     filter(hours_mission < 1000) %>%
 ggplot(aes(y = hours_mission, x = sex, fill = sex)) +
   geom_violin() +
-  labs(x = "Gender", y = "Mission Hours")
+  labs(x = "Gender", y = "Mission Hours") +
+  theme(legend.position = "none")
 
 Violin + Violin_filter
 
