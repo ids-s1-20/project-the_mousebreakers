@@ -92,19 +92,7 @@ class: inverse, center, middle
 
 ---
 
-# Gender selection by Country and Programme
-As we began to explore the data, we wondered if certain progressive countries led the introduction of women into the profession, or if all countries started to do so at the same time.
-- We found that:
-- As shown by the data, the first female astronauts were introduced in the ____ missions, ....
-- variable "selection" is programme
-- *graph*
-- Look into the programme in which the astronauts are enrolled in? What is the ratio of males to females in each programme? What country are these programmes held in? Is there a country in particular which is more/less progressive in gender equality?
-Adjusted R Squared Value? Is adding sex beneficial?
-
----
-
 #Nationality
-
 
 .pull-left[
 Nationality of those who have been to space:
@@ -128,14 +116,20 @@ Nationality of those who have been to space:
 ```
 ]
 
- - Since 1959 people from 40 different nationalities have ventured into outer-space. This includes countries such as U.S., Russia and Japan but also Mongolia, Afghanistan and Saudi Arabia. 
+.pull-right[
+- Since 1959 people from 40 different nationalities have ventured into outer-space. 
+
+- This includes countries you would expect such as the U.S. and Russia, as they are well known for their space programmes, but also lesser expectant countries such as Mongolia, Afghanistan and Saudi Arabia. 
+
+- Overall, the U.S. has the highest contribution  of astronauts at 854 followed by the U.S.S.R/Russia at 273. 
+
+- However, following this is a significant decrease with 20 Japanese nationals entering outer space and only 18 Canadians
+ ]
  
- - Overall, the U.S. has the highest contribution at 854 of astronauts followed by U.S.S.R/Russia at 273. 
- 
- - The number of astronauts from other nationalities is significant low in comparison to the U.S. and U.S.S.R/Russia. Japan has had 20 Japanese nationals enter outer of space, Canada has had 18 nationals. This is a significant difference in comparison to U.S. and U.S.S.R/Russia.
- 
- 
- 
+.footnote[
+[*] NOTE: Tibble is in decreasing order of Number of Astronauts from varying Nationalities.
+]
+
 ---
 
 #Nationality of Women in Space
@@ -145,96 +139,59 @@ Nationality of those who have been to space:
 
 ---
 
-#Programme
+#Selection Programme of Women in Space by Nationality 
 
 
 
-
+&lt;img src="presentation_files/figure-html/unnamed-chunk-5-1.png" width="80%" /&gt;
 
 ---
 class: inverse, center, middle
 
 # Military Status and Occupation
 
-
 ---
-
-#Progamme
-
-
-```
-## # A tibble: 143 x 24
-##       id number nationwide_numb… name  original_name sex   year_of_birth
-##    &lt;dbl&gt;  &lt;dbl&gt;            &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt;         &lt;chr&gt;         &lt;dbl&gt;
-##  1    18     10                6 Tere… ТЕРЕШКОВА Ва… fema…          1937
-##  2   215    111               53 Savi… Светлана Евг… fema…          1948
-##  3   216    111               53 Savi… Светлана Евг… fema…          1948
-##  4   241    121               57 Ride… Ride, Sally … fema…          1951
-##  5   242    121               57 Ride… Ride, Sally … fema…          1951
-##  6   307    147               77 Resn… Resnik, Judi… fema…          1949
-##  7   308    147               77 Resn… Resnik, Judi… fema…          1949
-##  8   313    150               80 Sull… Sullivan, Ka… fema…          1951
-##  9   314    150               80 Sull… Sullivan, Ka… fema…          1951
-## 10   315    150               80 Sull… Sullivan, Ka… fema…          1951
-## # … with 133 more rows, and 17 more variables: nationality &lt;chr&gt;,
-## #   military_civilian &lt;chr&gt;, selection &lt;chr&gt;, year_of_selection &lt;dbl&gt;,
-## #   mission_number &lt;dbl&gt;, total_number_of_missions &lt;dbl&gt;, occupation &lt;fct&gt;,
-## #   year_of_mission &lt;dbl&gt;, mission_title &lt;chr&gt;, ascend_shuttle &lt;chr&gt;,
-## #   in_orbit &lt;chr&gt;, descend_shuttle &lt;chr&gt;, hours_mission &lt;dbl&gt;,
-## #   total_hrs_sum &lt;dbl&gt;, field21 &lt;dbl&gt;, eva_hrs_mission &lt;dbl&gt;,
-## #   total_eva_hrs &lt;dbl&gt;
-```
+#Military Status
 
 
-
-
-
-
----
-# Gender and Military Status/Occupation
-- A common indicator of workplace gender inequality is women having to outperform their male counterparts to receive the same level of treatment, pay or respect.
-- Aware of this, we sought to investigate how military status affected selection for missions, and if female astronauts needed to occupy a higher military rank to be considered than males.
 .pull-left[
+&lt;img src="presentation_files/figure-html/mil-civ-1.png" width="80%" /&gt;
 
-We researched and rearranged the military ranks inside the occupation variable based on who was the highest ranking in each mission, and as shown at the table, it starts at the commander level and goes all the way down to space tourist.
-
+&lt;img src="presentation_files/figure-html/mil-civ-time-1.png" width="80%" /&gt;
 ]
+
 .pull-right[
-&lt;table&gt;
- &lt;thead&gt;
-  &lt;tr&gt;
-   &lt;th style="text-align:left;"&gt; occupation &lt;/th&gt;
-  &lt;/tr&gt;
- &lt;/thead&gt;
-&lt;tbody&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; commander &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; pilot &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; mission specialist &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; flight engineer &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; payload specialist &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; space tourist &lt;/td&gt;
-  &lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-]
+- A higher proportion of all the astronauts are in the military (~60%).
+- If we look at the genders of the astronauts separately, a much smaller proportion of women who were in space are in the military (~25%).
+- Looking at only the male astronauts, we can see that they have higher than average proportion of astronauts with military status (~64%) and fewer civilians.
 
+
+- While the number of civilian female astronauts has always been higher than the military affiliated ones, the difference between the two has been getting smaller.
+- Both curves have a peak around the late 90's and have been decreasing ever since, but this is due to the decrease in the overall number of missions.
+
+]
 
 ---
+# Occupation
 
-- Analyse the role of sex in relationship to military status. Are females of Military Status more likely to become astronauts? Or are more civilian females enlisted?
-Adjusted R Squared Value? Is adding sex beneficial?
-- Investigation the effect of gender and occupation. What ranking do female astronauts hold? How has this changed? Are higher ranking females more likely to be enlisted as astronauts?
+.pull-left[
+&lt;img src="presentation_files/figure-html/mil-stat-1.png" width="80%" /&gt;&lt;img src="presentation_files/figure-html/mil-stat-2.png" width="80%" /&gt;
+
+]
+
+.pull-right[
+- The two plots show a drastic difference between the occupation levels of the male and female astronauts.
+- There are very few high ranking female astronauts, and most of them are mission specialists, meaning that they were selected for a specific mission, and usually are scientists, not part of the military.
+- Male astronauts are more likely to be higher ranking, meaning that there are signs of gender inequality in the astronaut industry.
+
+]
+---
+
+Even though the number of female commanders and pilots is close to zero, there is an upward trend in the selection of female flight engineers and a downward trend in mission specialists, meaning that women are likely not just being chosen for a mission in the recent years because they are experts in a specific scientific area, but their military experience is considered too.
+
+
+&lt;img src="presentation_files/figure-html/milstat-time-1.png" width="80%" /&gt;
+
 
 
 
@@ -248,24 +205,26 @@ class: inverse, center, middle
 #Mission Hours
 
 .pull-left[
-&lt;img src="presentation_files/figure-html/unnamed-chunk-5-1.png" width="80%" /&gt;
+&lt;img src="presentation_files/figure-html/unnamed-chunk-6-1.png" width="80%" /&gt;&lt;img src="presentation_files/figure-html/unnamed-chunk-6-2.png" width="80%" /&gt;
 ]
 
 .pull-right[
--As shown by the graphs once a women is selected they arent prejudiced in how long there mission are.
+- As shown by the graphs once a women is selected they aren't prejudiced in how long there mission are shown by the similarties in shape.
 
--This implies women are treated the same once employed and are are no more or less likely to get longer or shorter missions than men
+- This implies women are treated the same once employed and are are no more or less likely to get longer or shorter missions than men.
+
+- However for missions over 7500 hours women are not selected, however missions of this length make up only 10 of 1227 missions so appears to be statistically insignificant.
 ]
 ---
 #Recall for more missions
 .pull-left[
-&lt;img src="presentation_files/figure-html/unnamed-chunk-6-1.png" width="80%" /&gt;
+&lt;img src="presentation_files/figure-html/unnamed-chunk-7-1.png" width="80%" /&gt;
 ]
 
 .pull-right[
--While women are less likely to be selected for mission they are just as likely to be selected again for multiple mission once they have completed one.
+- While women are less likely to be selected for mission they are just as likely to be selected again for multiple mission once they have completed one.
 
--Also the probability of them being selected again as compared to men over more than 2 missions stays showing that they continue to do just as good job throughout all the missions they complete with no tail off.
+- Also the probability of them being selected again as compared to men over more than 2 missions stays showing that they continue to do just as good job throughout all the missions they complete with no tail off.
 ]
 
 .pull-center[
@@ -287,7 +246,7 @@ class: inverse, center, middle
 
 
 
-&lt;img src="presentation_files/figure-html/unnamed-chunk-9-1.png" width="80%" /&gt;
+&lt;img src="presentation_files/figure-html/unnamed-chunk-10-1.png" width="80%" /&gt;
 
 ---
 #Area under the ROC curve
@@ -311,208 +270,6 @@ class: inverse, center, middle
 Upward trend in the number of women deployed in space missions. 
 - changes in societal gender roles 
 - striving for equality in the workplace
-
-
----
-
-class: inverse, middle, center
-
-# Notes on presentation syntax/formatting
-
----
-
-# xaringan
-
-- The presentation is created using the `xaringan` package
-
-- Use `---` to separate slides and `--` for incremental builds
-
---
-
-- Like this
-
----
-
-# Layouts
-
-You can use plain text
-
-- or bullet points
-
-.pull-left[
-or text in two columns `\(^*\)`
-]
-.pull-right[
-- like
-- this
-]
-
-.footnote[
-[*] And add footnotes
-]
-
----
-
-# Code
-
-
-```r
-# a boring regression
-model &lt;- lm(dist ~ speed, data = cars)
-tidy(model)
-```
-
-```
-## # A tibble: 2 x 5
-##   term        estimate std.error statistic  p.value
-##   &lt;chr&gt;          &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;    &lt;dbl&gt;
-## 1 (Intercept)   -17.6      6.76      -2.60 1.23e- 2
-## 2 speed           3.93     0.416      9.46 1.49e-12
-```
-
-```r
-glance(model)
-```
-
-```
-## # A tibble: 1 x 12
-##   r.squared adj.r.squared sigma statistic  p.value    df logLik   AIC   BIC
-##       &lt;dbl&gt;         &lt;dbl&gt; &lt;dbl&gt;     &lt;dbl&gt;    &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
-## 1     0.651         0.644  15.4      89.6 1.49e-12     1  -207.  419.  425.
-## # … with 3 more variables: deviance &lt;dbl&gt;, df.residual &lt;int&gt;, nobs &lt;int&gt;
-```
-
----
-
-# Plots
-
-
-
-&lt;img src="presentation_files/figure-html/plot-iris-1.png" width="80%" /&gt;
-
----
-
-## Plot and text
-
-.pull-left[
-- Some text
-- goes here
-]
-.pull-right[
-&lt;img src="presentation_files/figure-html/unnamed-chunk-11-1.png" width="100%" /&gt;
-]
-
----
-
-# Tables
-
-If you want to generate a table, make sure it is in the HTML format (instead of Markdown or other formats), e.g.,
-
-&lt;table&gt;
- &lt;thead&gt;
-  &lt;tr&gt;
-   &lt;th style="text-align:right;"&gt; Sepal.Length &lt;/th&gt;
-   &lt;th style="text-align:right;"&gt; Sepal.Width &lt;/th&gt;
-   &lt;th style="text-align:right;"&gt; Petal.Length &lt;/th&gt;
-   &lt;th style="text-align:right;"&gt; Petal.Width &lt;/th&gt;
-   &lt;th style="text-align:left;"&gt; Species &lt;/th&gt;
-  &lt;/tr&gt;
- &lt;/thead&gt;
-&lt;tbody&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:right;"&gt; 5.1 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 3.5 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 1.4 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.2 &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; setosa &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:right;"&gt; 4.9 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 3.0 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 1.4 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.2 &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; setosa &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:right;"&gt; 4.7 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 3.2 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 1.3 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.2 &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; setosa &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:right;"&gt; 4.6 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 3.1 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 1.5 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.2 &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; setosa &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:right;"&gt; 5.0 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 3.6 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 1.4 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.2 &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; setosa &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:right;"&gt; 5.4 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 3.9 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 1.7 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.4 &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; setosa &lt;/td&gt;
-  &lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-
----
-
-# Images
-
-&lt;div class="figure" style="text-align: center"&gt;
-&lt;img src="https://images.unsplash.com/photo-1535448033526-c0e85c9e6968?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=1650&amp;q=80" alt="Image credit: Photo by Jörg Angeli on Unsplash." width="60%" /&gt;
-&lt;p class="caption"&gt;Image credit: Photo by Jörg Angeli on Unsplash.&lt;/p&gt;
-&lt;/div&gt;
-
-Or you can also include a full page image. See next slide.
-
----
-
-background-image: url(https://images.unsplash.com/photo-1535448033526-c0e85c9e6968?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=1650&amp;q=80)
-
----
-
-# Math Expressions
-
-You can write LaTeX math expressions inside a pair of dollar signs, e.g. &amp;#36;\alpha+\beta$ renders `\(\alpha+\beta\)`. You can use the display style with double dollar signs:
-
-```
-$$\bar{X}=\frac{1}{n}\sum_{i=1}^nX_i$$
-```
-
-`$$\bar{X}=\frac{1}{n}\sum_{i=1}^nX_i$$`
-
-Limitations:
-
-1. The source code of a LaTeX math expression must be in one line, unless it is inside a pair of double dollar signs, in which case the starting `$$` must appear in the very beginning of a line, followed immediately by a non-space character, and the ending `$$` must be at the end of a line, led by a non-space character;
-
-1. There should not be spaces after the opening `$` or before the closing `$`.
-
-1. Math does not work on the title slide (see [#61](https://github.com/yihui/xaringan/issues/61) for a workaround).
-
----
-
-# Feeling adventurous?
-
-- Want to find out more about `xaringan`? See https://slides.yihui.name/xaringan/#1.
-
-- You are welcomed to use the default styling of the slides. In fact, that's what 
-I expect majority of you will do. You will differentiate yourself with the content 
-of your presentation.
-
-- But some of you might want to play around with slide styling. The 
-`xaringanthemer` provides some solutions for this that: https://pkg.garrickadenbuie.com/xaringanthemer/. 
-
----
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
