@@ -4,6 +4,23 @@ by The Mousebreakers
 
 ## Summary
 
+The space industry has been male-dominated from the start, and this
+trend has continued in recent years, as shown by the graph’s
+proportionality display. While this may be due to space-related
+occupations being primarily populated by STEM graduates, a notoriously
+gender-imbalanced field, we were still surprised at the lack of female
+representation in space when skimming through the “astronauts” dataset
+from the TidyTuesday Database. We aimed to find trends behind our data;
+is there a systematic problem with gender in space? In the Western
+world, military structures prohibited capable women from becoming
+eligible to launch. It was only in 1978 that anti-discrimination laws
+were passed to open up the job to female applicants. This Violin plot
+simply shows the time astronauts spent spacewalking, with women having
+spent significantly less time performing EVA than men. Upon initial
+research, it is a lack of well-fitting space suits and a lower radiation
+tolerance that could be responsible for this. However, variables such as
+the type of job women typically perform in space may play a part.
+
 Since 1959 people from 40 different nationalities have ventured into
 outer-space. This includes countries you would expect such as the U.S.
 and Russia, as they are well known for their space programmes, but also
@@ -74,6 +91,12 @@ Stavnichuk, Mariya; Corlett, Tatsuya (2020), *“Astronaut database”*,
 Mendeley Data, V1, doi: 10.17632/86tsnnbv2w.1
 
 ## References
+
+Valentina Tereshkova, Copyright RSC Energia,
+<https://anotherimg-dazedgroup.netdna-ssl.com/482/azure/another-prod/340/7/347259.jpg>
+
+Spacewalk, Copyright NASA,
+<https://techcrunch.com/wp-content/uploads/2016/01/nasa-spacewalk.jpg?w=1390&crop=1>
 
 Stavnichuk, Mariya; Corlett, Tatsuya (2020), *“Astronaut database”*,
 Mendeley Data, V1, doi: 10.17632/86tsnnbv2w.1
