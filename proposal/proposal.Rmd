@@ -9,7 +9,7 @@ library(tidyverse)
 library(broom)
 
 
-astronauts <- read_csv("/cloud/project/data/astronauts.csv")
+astronauts_proposal <- read_csv("/cloud/project/data/astronauts.csv")
 
 ```
 
@@ -23,7 +23,7 @@ Our data is from TidyTuesday's Astronaut Database, with the data collected solel
 
 ## 2. Data
 ```{r see_data}
-glimpse(astronauts)
+glimpse(astronauts_proposal)
 ```
 
 
@@ -32,7 +32,7 @@ glimpse(astronauts)
 The outcome will be the variables that we will be looking at (i.e. occupation, number of missions, military status, time spent in space etc.). The predictor will be the sex of the astronauts and we will evaluate this over time. The conclusion that we want to come to is that, while the astronautical industry was sexist and biased towards men in the past, in recent times this has changed; women are now given equal opportunities and regarded with the same respect as male astronauts. This will present itself in the data through more equal gender ratios, longer mission times for women and more junior women in the military being sent to space.
 
 ```{r year_and_sex}
-astronauts %>%
+astronauts_proposal %>%
   ggplot(aes(x = year_of_selection, fill = sex)) + 
   geom_bar()+
   labs(title = "The number of astronauts selected for missions over time, by gender",
@@ -43,7 +43,7 @@ astronauts %>%
    theme(plot.margin = unit(c(1, 1, 1, 1),"cm"))
 
 
-astronauts %>%
+astronauts_proposal %>%
   ggplot(aes(x = year_of_selection, fill = sex)) + 
   geom_bar(position = "fill")+
   labs(title = "The proportion of male/female astronauts selected for missions over time",
@@ -60,17 +60,17 @@ astronauts %>%
 
 
 ```{r number_of_missions}
-astronauts %>%
+astronauts_proposal %>%
   summarise(n_distinct(mission_title))
 ```
 
-The total number of missions covered in this data set is `r astronauts %>% summarise(n_distinct(mission_title))`.
+The total number of missions covered in this data set is `r astronauts_proposal %>% summarise(n_distinct(mission_title))`.
 
 
 
 ```{r mean_total_missions}
 # mean of total number of missions for male vs female astronauts
-astronauts %>%
+astronauts_proposal %>%
   group_by(sex) %>%
   summarise(
     mean_n = mean(total_number_of_missions)
