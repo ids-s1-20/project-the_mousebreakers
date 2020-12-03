@@ -313,8 +313,8 @@ astronauts %>%
          n_civ = sum(military_civilian == "civilian")) %>% 
   select(n_mil, n_civ, year_of_mission) %>% 
   ggplot(aes(x = year_of_mission, y = n_civ + n_mil)) +
-  geom_smooth(se = FALSE, aes(x = year_of_mission, y = n_civ,color = "Civilian")) +
-  geom_smooth(aes(x = year_of_mission, y = n_mil, color= "Military"), se = FALSE) +
+  geom_smooth(se = FALSE, aes(x = year_of_mission, y = n_civ,color = "Civilian"), method = "loess", formula = "y ~ x") +
+  geom_smooth(aes(x = year_of_mission, y = n_mil, color= "Military"), se = FALSE, , method = "loess", formula = "y ~ x") +
   labs(y = "Number of Female Astronauts",
        x = "Year of the mission",
        title = "Number of Female Astronauts sent on Missions",
