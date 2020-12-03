@@ -15,7 +15,8 @@ the U.S. had the highest overall amount, however, only equates to only
 their astronauts being female. When considering the selection programme
 these women enrolled in and their nationality, NASA enrolled the highest
 number of female astronauts. This is consistent with what we have
-previously seen as it is an american based space exploration company.
+previously seen as it is an American based space exploration company.
+
 The next variables we considered were occupation and military status. A
 common indicator of workplace gender inequality is women having to
 outperform their male counterparts to receive the same level of
@@ -30,23 +31,25 @@ astronauts.There are very few high ranking female astronauts, and most
 of them are mission specialists. Furthermore, male astronauts are more
 likely to be higher ranking,which means that there are signs of gender
 inequality in the astronaut industry by not offering higher ranks to
-female astronauts with potentially the same experience. The next
-variable we investigated was ‘Mission hours’ of women as compared to men
-and how likely women were to be recalled for missions as compared to
-men. The first visualization we completed showed that women weren’t
-being employed for missions over 7500 hours or 300 days. After further
-investigation this turned out to only be only 10 of 1772 missions but
-despite this it still seemed interesting that women weren’t being
-considered for these length of missions. The next visualization showed
-that where the bulk of the data lied for mission hours, below 800 hours,
-both women’s and men’s length of mission seemed to be comparable. The
-ratio of men to women stayed relatively constant between 1 and 5
+female astronauts with potentially the same experience.
+
+The next variable we investigated was ‘Mission hours’ of women as
+compared to men and how likely women were to be recalled for missions as
+compared to men. The first visualization we completed showed that women
+weren’t being employed for missions over 7500 hours or 300 days. After
+further investigation this turned out to only be only 10 of 1772
+missions but despite this it still seemed interesting that women weren’t
+being considered for these length of missions. The next visualization
+showed that where the bulk of the data lied for mission hours, below 800
+hours, both women’s and men’s length of mission seemed to be comparable.
+The ratio of men to women stayed relatively constant between 1 and 5
 missions. Implying that women were being recalled just as much as men
-and that once employed were doing just as good a job. To see how each
-variable contributes to the gender of the astronauts we used logistic
-regression for the covered variables. Then we divided the data into a
-training set and a test set to predict the gender of an incoming
-astronaut based on those variables. The Receiver operating
+and that once employed were doing just as good a job.
+
+To see how each variable contributes to the gender of the astronauts we
+used logistic regression for the covered variables. Then we divided the
+data into a training set and a test set to predict the gender of an
+incoming astronaut based on those variables. The Receiver operating
 characteristic curve came out to be above the diagonal line. This means
 that the variables taken into consideration do in fact contribute to the
 gender of the astronauts. In conclusion, we have found that different
@@ -62,14 +65,13 @@ towards gender equality in the space industry.
     ## ✓ ggplot2 3.3.2     ✓ purrr   0.3.4
     ## ✓ tibble  3.0.4     ✓ dplyr   1.0.2
     ## ✓ tidyr   1.1.2     ✓ stringr 1.4.0
-    ## ✓ readr   1.4.0     ✓ forcats 0.5.0
+    ## ✓ readr   1.3.1     ✓ forcats 0.5.0
 
     ## ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
     ## x dplyr::filter() masks stats::filter()
     ## x dplyr::lag()    masks stats::lag()
 
-    ## 
-    ## ── Column specification ────────────────────────────────────────────────────────
+    ## Parsed with column specification:
     ## cols(
     ##   .default = col_double(),
     ##   name = col_character(),
@@ -84,7 +86,8 @@ towards gender equality in the space industry.
     ##   in_orbit = col_character(),
     ##   descend_shuttle = col_character()
     ## )
-    ## ℹ Use `spec()` for the full column specifications.
+
+    ## See spec(...) for full column specifications.
 
 ## Presentation
 
