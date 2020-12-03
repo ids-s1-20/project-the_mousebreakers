@@ -68,7 +68,7 @@ class: inverse, center, middle
 
 # Introduction to the Dataset
 .pull-left[
-```{r echo = FALSE, out.width = "200%"}
+```{r Initial Bar, echo = FALSE, out.width = "200%"}
 
 astronauts %>%
   ggplot(aes(x = year_of_selection, fill = sex)) + 
@@ -144,7 +144,7 @@ class: inverse, center, middle
 
 .pull-left[
 Nationality of those who have been to space:
-```{r, echo = FALSE}
+```{r summary stat, echo = FALSE}
 astronauts %>%
   group_by(nationality) %>%
   count() %>%
@@ -172,7 +172,7 @@ astronauts %>%
 #Nationality of Women in Space
 
 
-```{r, echo = FALSE}
+```{r country in order, echo = FALSE}
 astronauts %>%
   filter(sex == "female") %>%
   mutate(nationality = fct_relevel(nationality, 
@@ -199,7 +199,7 @@ astronauts %>%
 
 #Selection Programme of Women in Space by Nationality 
 
-```{r, echo = FALSE}
+```{r space program, echo = FALSE}
 astronauts_programme <- astronauts %>%
   filter(sex == "female") %>%
   mutate(selection = 
@@ -243,7 +243,7 @@ astronauts_programme <- astronauts %>%
              TRUE ~ selection))
 ```
 
-```{r,echo = FALSE}
+```{r nationality,echo = FALSE}
 astronauts_programme %>%
   mutate(selection = fct_relevel(selection, 
                                  "NASA", 
@@ -386,7 +386,7 @@ class: inverse, center, middle
 #Mission Hours
 
 
-```{r, echo = FALSE}
+```{r violin plots of mission hours, echo = FALSE}
 
 Violin <- astronauts %>%
 ggplot(aes(y = hours_mission, x = sex, fill = sex)) +
@@ -412,7 +412,7 @@ Violin + Violin_filter
 ---
 #Recall for more missions
 
-```{r, echo = FALSE} 
+```{r bar plot of recal, echo = FALSE} 
 astronauts %>%
 ggplot(aes(x = total_number_of_missions, fill = sex)) +
   geom_bar(position = "fill") +
@@ -434,7 +434,7 @@ class: inverse, center, middle
 f_astro <- mutate(astronauts, is_female = if_else(sex == "male", 0, 1))
 ```
 
-```{r, echo = FALSE}
+```{r linear model, echo = FALSE}
 set.seed(1116)
 
 astro_split <- initial_split(f_astro, prop = 0.80)
@@ -451,7 +451,7 @@ gender_pred <- predict(gender_fit, test_data, type = "prob") %>%
 ```
 
 
-```{r, echo=FALSE}
+```{r linear, echo=FALSE}
 gender_pred %>%
   roc_curve (
     truth = as.factor(is_female),
@@ -464,7 +464,7 @@ gender_pred %>%
 ---
 #Area under the ROC curve
 
-```{r, echo=FALSE}
+```{r model, echo=FALSE}
 auc <- gender_pred %>%
   roc_auc (
     truth = as.factor(is_female),
