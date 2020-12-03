@@ -7,7 +7,7 @@ library(tidyverse)
 library(broom)
 
 
-astronauts <- read_csv("/cloud/project/data/astronauts.csv")
+astronauts_proposal <- read_csv("/cloud/project/data/astronauts.csv")
 ```
 
 ## 1\. Introduction
@@ -38,7 +38,7 @@ the ones we used carefully, as not all may be relevant to our objective.
 ## 2\. Data
 
 ``` r
-glimpse(astronauts)
+glimpse(astronauts_proposal)
 ```
 
     ## Rows: 1,277
@@ -82,7 +82,7 @@ longer mission times for women and more junior women in the military
 being sent to space.
 
 ``` r
-astronauts %>%
+astronauts_proposal %>%
   ggplot(aes(x = year_of_selection, fill = sex)) + 
   geom_bar()+
   labs(title = "The number of astronauts selected for missions over time, by gender",
@@ -96,7 +96,7 @@ astronauts %>%
 ![](proposal_files/figure-gfm/year_and_sex-1.png)<!-- -->
 
 ``` r
-astronauts %>%
+astronauts_proposal %>%
   ggplot(aes(x = year_of_selection, fill = sex)) + 
   geom_bar(position = "fill")+
   labs(title = "The proportion of male/female astronauts selected for missions over time",
@@ -111,7 +111,7 @@ astronauts %>%
 ![](proposal_files/figure-gfm/year_and_sex-2.png)<!-- -->
 
 ``` r
-astronauts %>%
+astronauts_proposal %>%
   summarise(n_distinct(mission_title))
 ```
 
@@ -124,7 +124,7 @@ The total number of missions covered in this data set is 362.
 
 ``` r
 # mean of total number of missions for male vs female astronauts
-astronauts %>%
+astronauts_proposal %>%
   group_by(sex) %>%
   summarise(
     mean_n = mean(total_number_of_missions)
