@@ -60,8 +60,9 @@ towards gender equality in the space industry.
 ## Presentation
 
 Our presentation (slides) can be found
-[here](https://ids-s1-20.github.io/project-the_mousebreakers/). Our
-pre-recorded presentation can be found here
+[here](https://ids-s1-20.github.io/project-the_mousebreakers/).
+
+Our pre-recorded presentation can be found here
 <https://media.ed.ac.uk/media/The+Mousebreakers+-+Astronauts/1_zva3l3ss>
 
 ## Data
