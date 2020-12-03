@@ -60,35 +60,6 @@ Possible reasons for that are changing traditional gender roles and
 striving for equality in the workplace which results in a progression
 towards gender equality in the space industry.
 
-    ## ── Attaching packages ─────────────────────────────────────── tidyverse 1.3.0 ──
-
-    ## ✓ ggplot2 3.3.2     ✓ purrr   0.3.4
-    ## ✓ tibble  3.0.4     ✓ dplyr   1.0.2
-    ## ✓ tidyr   1.1.2     ✓ stringr 1.4.0
-    ## ✓ readr   1.3.1     ✓ forcats 0.5.0
-
-    ## ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
-    ## x dplyr::filter() masks stats::filter()
-    ## x dplyr::lag()    masks stats::lag()
-
-    ## Parsed with column specification:
-    ## cols(
-    ##   .default = col_double(),
-    ##   name = col_character(),
-    ##   original_name = col_character(),
-    ##   sex = col_character(),
-    ##   nationality = col_character(),
-    ##   military_civilian = col_character(),
-    ##   selection = col_character(),
-    ##   occupation = col_character(),
-    ##   mission_title = col_character(),
-    ##   ascend_shuttle = col_character(),
-    ##   in_orbit = col_character(),
-    ##   descend_shuttle = col_character()
-    ## )
-
-    ## See spec(...) for full column specifications.
-
 ## Presentation
 
 Our presentation (slides) can be found
