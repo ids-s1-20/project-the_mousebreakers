@@ -33,7 +33,7 @@ library(tidyr)
 knitr::opts_chunk$set(fig.retina = 3, dpi = 300, fig.width = 6, fig.asp = 0.618, out.width = "80%")
 ```
 
-```{r load-data, include=FALSE}
+```{r load-data, echo=FALSE, message = FALSE}
 astronauts_raw <- read_csv("/cloud/project/data/astronauts.csv")
 ```
 
