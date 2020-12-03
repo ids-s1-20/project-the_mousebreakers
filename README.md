@@ -64,18 +64,19 @@ missions. Implying that women were being recalled just as much as men
 and that once employed were doing just as good a job.
 
 To see how each variable contributes to the gender of the astronauts we
-used logistic regression for the covered variables. Then we divided the
-data into a training set and a test set to predict the gender of an
-incoming astronaut based on those variables. The Receiver operating
-characteristic curve came out to be above the diagonal line. This means
-that the variables taken into consideration do in fact contribute to the
-gender of the astronauts. In conclusion, we have found that different
-variables contribute differently to the gender of the astronaut, with
-nationality and selection programme being the most influential. We have
-shown that there is an upward trend in the number of female astronauts.
-Possible reasons for that are changing traditional gender roles and
-striving for equality in the workplace which results in a progression
-towards gender equality in the space industry.
+used logistic regression. We split the data into two sets: training and
+testing, and predicted the gender of an incoming astronaut based on
+covered variables. The Receiver Operating Characteristic curve came out
+to be above the diagonal line, meaning that the variables do in fact
+contribute to the gender of the astronauts.
+
+In conclusion, we have found that different variables contribute
+differently to the gender of the astronaut, with nationality and
+selection programme being the most influential. We have shown that there
+is an upward trend in the number of female astronauts. Possible reasons
+for that are changing traditional gender roles and striving for equality
+in the workplace which results in a progression towards gender equality
+in the space industry.
 
 ## Presentation
 
