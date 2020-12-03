@@ -95,12 +95,18 @@ pre-recorded presentation can be found here
 
 ## Data
 
+Stavnichuk, Mariya; Corlett, Tatsuya (2020), *“Astronaut database”*,
+Mendeley Data, V1, doi: 10.17632/86tsnnbv2w.1
+
 Include a citation for your data here. See
 <http://libraryguides.vu.edu.au/c.php?g=386501&p=4347840> for guidance
 on proper citation for datasets. If you got your data off the web, make
 sure to note the retrieval date.
 
 ## References
+
+Stavnichuk, Mariya; Corlett, Tatsuya (2020), *“Astronaut database”*,
+Mendeley Data, V1, doi: 10.17632/86tsnnbv2w.1
 
 List any references here. You should, at a minimum, list your data
 source.
