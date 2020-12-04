@@ -83,8 +83,8 @@ in the space industry.
 Our presentation (slides) can be found
 [here](presentation/presentation.html).
 
-Our pre-recorded presentation can be found here
-<https://media.ed.ac.uk/media/The+Mousebreakers+-+Astronauts/1_zva3l3ss>
+Our pre-recorded presentation can be found
+[here](https://media.ed.ac.uk/media/The+Mousebreakers+-+Astronauts/1_zva3l3ss).
 
 ## Data
 
